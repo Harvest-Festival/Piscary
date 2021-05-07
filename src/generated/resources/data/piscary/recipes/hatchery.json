@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F F",
+    "F F",
+    "SSS"
+  ],
+  "key": {
+    "F": {
+      "tag": "minecraft:fences"
+    },
+    "S": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "item": "piscary:hatchery"
+  }
+}

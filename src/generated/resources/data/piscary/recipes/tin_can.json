@@ -1,0 +1,8 @@
+{
+  "type": "piscary:recycler",
+  "ingredient": {
+    "item": "piscary:tin_can"
+  },
+  "result": "minecraft:iron_nugget",
+  "count": 3
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes"
+    }
+  ],
+  "result": {
+    "item": "piscary:sashimi"
+  }
+}

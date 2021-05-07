@@ -1,0 +1,8 @@
+{
+  "type": "piscary:recycler",
+  "ingredient": {
+    "item": "piscary:fossil"
+  },
+  "result": "minecraft:coal",
+  "count": 1
+}

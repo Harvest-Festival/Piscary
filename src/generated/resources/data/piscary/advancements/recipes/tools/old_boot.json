@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "piscary:old_boot"
+    ]
+  },
+  "criteria": {
+    "has_recycler": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "piscary:recycler"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "piscary:old_boot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_recycler",
+      "has_the_recipe"
+    ]
+  ]
+}

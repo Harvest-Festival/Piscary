@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 17,
+          "name": "piscary:fish_bones"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 14,
+          "name": "piscary:old_boot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 16,
+          "name": "piscary:tin_can"
+        }
+      ]
+    }
+  ]
+}

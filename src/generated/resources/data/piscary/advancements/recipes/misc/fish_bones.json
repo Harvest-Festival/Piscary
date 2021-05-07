@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "piscary:fish_bones"
+    ]
+  },
+  "criteria": {
+    "has_recycler": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "piscary:recycler"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "piscary:fish_bones"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_recycler",
+      "has_the_recipe"
+    ]
+  ]
+}

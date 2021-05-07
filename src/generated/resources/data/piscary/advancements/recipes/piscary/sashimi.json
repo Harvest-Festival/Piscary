@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "piscary:sashimi"
+    ]
+  },
+  "criteria": {
+    "has_fishes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:fishes"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "piscary:sashimi"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fishes",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "piscary:fish_fingers"
+    ]
+  },
+  "criteria": {
+    "has_fishes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:fishes"
+          }
+        ]
+      }
+    },
+    "has_bread": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:bread"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "piscary:fish_fingers"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fishes",
+      "has_bread",
+      "has_the_recipe"
+    ]
+  ]
+}

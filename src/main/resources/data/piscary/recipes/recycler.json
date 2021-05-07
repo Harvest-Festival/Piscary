@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SWS",
+    "SPS",
+    "SLS"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:stone"
+    },
+    "W": {
+      "item": "minecraft:stick"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    },
+    "L": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "piscary:recycler"
+  }
+}
