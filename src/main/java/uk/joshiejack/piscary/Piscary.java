@@ -15,6 +15,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
 import uk.joshiejack.piscary.client.data.PiscaryItemModels;
 import uk.joshiejack.piscary.crafting.PiscaryRegistries;
@@ -31,6 +33,7 @@ import javax.annotation.Nonnull;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Piscary {
     public static final String MODID = "piscary";
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final ItemGroup TAB = new ItemGroup(MODID) {
         @Nonnull
         @OnlyIn(Dist.CLIENT)

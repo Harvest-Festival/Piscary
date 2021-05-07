@@ -16,7 +16,6 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import uk.joshiejack.penguinlib.PenguinLib;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
 import uk.joshiejack.piscary.client.model.*;
@@ -59,7 +58,7 @@ public class PiscaryClient {
         put(map, new TallFishModel(), "blue_tang", "damselfish");
         PiscaryEntities.ENTITIES.getEntries().forEach(fish -> {
             EntityModel m = map.get(fish.getId().getPath());
-            PenguinLib.LOGGER.info("Registering: " + fish.getId() + " as " + m);
+            Piscary.LOGGER.info("Registering: " + fish.getId() + " as " + m);
             RenderingRegistry.registerEntityRenderingHandler(fish.get(),
                     (manager) -> (EntityRenderer) (
                             fish.getId().getPath().contains("ray") ? new RayRenderer(manager, map.get(fish.getId().getPath()), fish.getId().getPath())

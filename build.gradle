@@ -27,10 +27,6 @@ repositories {
         name 'DVS1 Maven FS'
         url 'https://dvs1.progwml6.com/files/maven'
     }
-    maven {
-        // Aquaculture
-        url "http://girafi.dk/maven/"
-    }
 }
 
 version = mod_version
@@ -92,7 +88,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.1.16'
     compile fg.deobf("uk.joshiejack.penguinlib:Penguin-Lib:${minecraft_version}-${penguinlib_version}")
-    compile fg.deobf("com.teammetallurgy.aquaculture:aquaculture2_${minecraft_version}:${minecraft_version}-${aquaculture_version}")
     compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
 }

@@ -1,6 +1,5 @@
 package uk.joshiejack.piscary.data;
 
-import com.teammetallurgy.aquaculture.Aquaculture;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
@@ -8,6 +7,7 @@ import net.minecraft.loot.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import uk.joshiejack.penguinlib.data.database.CSVUtils;
 import uk.joshiejack.penguinlib.data.database.DatabaseProvider;
 import uk.joshiejack.piscary.Piscary;
@@ -30,6 +30,7 @@ public class PiscaryDatabase extends DatabaseProvider {
     @Override
     protected void addDatabaseEntries() {
         addBait(PiscaryItems.BAIT, LootTables.FISHING_FISH, 1, 0);
+        addAquacultureBait("worm", LootTables.FISHING_FISH, 1, 0);
         //################# FISH HATCHERY DATA ##################//
         addHatcheryEntry(() -> EntityType.COD, 3);
         addHatcheryEntry(() -> EntityType.SALMON, 3);
@@ -68,7 +69,35 @@ public class PiscaryDatabase extends DatabaseProvider {
         addHatcheryEntry(PiscaryEntities.WALLEYE, 3);
         //################# AQUACULTURE HATCHERY ##################//
         if (ModList.get().isLoaded("aquaculture")) {
-            //addHatcheryEntry(Aquaculture);
+            addAquacultureHatcheryEntry("atlantic_cod", 6);
+            addAquacultureHatcheryEntry("blackfish", 5);
+            addAquacultureHatcheryEntry("pacific_halibut", 7);
+            addAquacultureHatcheryEntry("atlantic_halibut", 7);
+            addAquacultureHatcheryEntry("atlantic_herring", 3);
+            addAquacultureHatcheryEntry("pink_salmon", 6);
+            addAquacultureHatcheryEntry("pollock", 5);
+            addAquacultureHatcheryEntry("rainbow_trout", 6);
+            addAquacultureHatcheryEntry("bayad", 6);
+            addAquacultureHatcheryEntry("boulti", 5);
+            addAquacultureHatcheryEntry("capitaine", 7);
+            addAquacultureHatcheryEntry("synodontis", 3);
+            addAquacultureHatcheryEntry("smallmouth_bass", 5);
+            addAquacultureHatcheryEntry("bluegill", 3);
+            addAquacultureHatcheryEntry("brown_trout", 5);
+            addAquacultureHatcheryEntry("carp", 5);
+            addAquacultureHatcheryEntry("catfish", 5);
+            addAquacultureHatcheryEntry("gar", 6);
+            addAquacultureHatcheryEntry("minnow", 4);
+            addAquacultureHatcheryEntry("muskellunge", 7);
+            addAquacultureHatcheryEntry("perch", 3);
+            addAquacultureHatcheryEntry("arapaima", 7);
+            addAquacultureHatcheryEntry("piranha", 7);
+            addAquacultureHatcheryEntry("tambaqui", 6);
+            addAquacultureHatcheryEntry("brown_shrooma", 2);
+            addAquacultureHatcheryEntry("red_shrooma", 2);
+            addAquacultureHatcheryEntry("jellyfish", 5);
+            addAquacultureHatcheryEntry("red_grouper", 6);
+            addAquacultureHatcheryEntry("tuna", 7);
         }
         //################# FISH SPAWN SETTINGS ##################//
         addFishSpawnSettings(PiscaryEntities.ANCHOVY, 22, 8, 12);
@@ -162,6 +191,16 @@ public class PiscaryDatabase extends DatabaseProvider {
 
     public enum SpawnType {
         REQUIRE, EXCLUDE
+    }
+
+    protected void addAquacultureBait(String name, ResourceLocation lootTable, int speed, int luck) {
+        if (ModList.get().isLoaded("aquaculture"))
+            addBait(() -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("aquaculture", name)), lootTable, speed, luck);
+    }
+
+    protected void addAquacultureHatcheryEntry(String name, int days) {
+        if (ModList.get().isLoaded("aquaculture"))
+            addHatcheryEntry(() -> ForgeRegistries.ENTITIES.getValue(new ResourceLocation("aquaculture", name)), days);
     }
 
     protected void addBait(Supplier<Item> item, ResourceLocation lootTable, int speed, int luck) {
