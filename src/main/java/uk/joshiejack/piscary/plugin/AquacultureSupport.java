@@ -1,9 +1,10 @@
-package uk.joshiejack.piscary.item;
+package uk.joshiejack.piscary.plugin;
 
 import net.minecraft.item.Item;
 import uk.joshiejack.penguinlib.util.PenguinLoader;
 import uk.joshiejack.penguinlib.util.interfaces.IModPlugin;
 import uk.joshiejack.piscary.Piscary;
+import uk.joshiejack.piscary.item.PiscaryItems;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

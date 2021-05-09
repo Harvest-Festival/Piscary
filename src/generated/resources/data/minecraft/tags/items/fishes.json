@@ -32,10 +32,6 @@
     "piscary:silver_stripe_blaasop",
     "piscary:trout",
     "piscary:tuna",
-    "piscary:walleye",
-    "minecraft:cod",
-    "minecraft:salmon",
-    "minecraft:pufferfish",
-    "minecraft:tropical_fish"
+    "piscary:walleye"
   ]
 }

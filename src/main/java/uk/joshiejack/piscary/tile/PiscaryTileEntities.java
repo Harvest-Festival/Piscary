@@ -12,5 +12,5 @@ public class PiscaryTileEntities {
     public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Piscary.MODID);
     public static final RegistryObject<TileEntityType<FishTrapTileEntity>> FISH_TRAP = TILE_ENTITIES.register("fish_trap", () -> TileEntityType.Builder.of(FishTrapTileEntity::new, PiscaryBlocks.FISH_TRAP.get()).build(null));
     public static final RegistryObject<TileEntityType<HatcheryTileEntity>> HATCHERY = TILE_ENTITIES.register("hatchery", () -> TileEntityType.Builder.of(HatcheryTileEntity::new, PiscaryBlocks.HATCHERY.get()).build(null));
-    public static final RegistryObject<TileEntityType<?>> RECYCLER = TILE_ENTITIES.register("recycler", () -> TileEntityType.Builder.of(RecyclerTileEntity::new, PiscaryBlocks.RECYCLER.get()).build(null));
+    public static final RegistryObject<TileEntityType<RecyclerTileEntity>> RECYCLER = TILE_ENTITIES.register("recycler", () -> TileEntityType.Builder.of(RecyclerTileEntity::new, PiscaryBlocks.RECYCLER.get()).build(null));
 }

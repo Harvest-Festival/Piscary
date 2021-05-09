@@ -1,4 +1,4 @@
-package uk.joshiejack.piscary.client.data;
+package uk.joshiejack.piscary.data;
 
 import joptsimple.internal.Strings;
 import net.minecraft.data.DataGenerator;

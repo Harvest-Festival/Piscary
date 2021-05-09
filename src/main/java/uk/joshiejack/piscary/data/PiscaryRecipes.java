@@ -7,7 +7,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
-import uk.joshiejack.penguinlib.data.PenguinTags;
+import uk.joshiejack.penguinlib.util.PenguinTags;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
 import uk.joshiejack.piscary.crafting.RecyclerRecipe;
@@ -40,7 +40,7 @@ public class PiscaryRecipes extends RecipeProvider {
         ShapedRecipeBuilder.shaped(PiscaryItems.RECYCLER::get).define('S', Tags.Items.STONE).define('W', Items.STICK).define('P', Blocks.PISTON).define('L', Blocks.LEVER).pattern("SWS").pattern("SPS").pattern("SLS").unlockedBy("has_redstone", has(Tags.Items.DUSTS_REDSTONE)).save(consumer, rl("recycler"));
         //Recycler
         RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.FISH_BONES.get()), Items.BONE_MEAL, 2).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("fish_bones"));
-        RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.OLD_BOOT.get()), Items.LEAD, 1).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("old_boot"));
+        RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.OLD_BOOT.get()), Items.LEATHER, 1).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("old_boot"));
         RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.TIN_CAN.get()), Items.IRON_NUGGET, 3).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("tin_can"));
         RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.FOSSIL.get()), Items.COAL, 1).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("fossil"));
         RecyclerRecipe.recycler(Ingredient.of(ItemTags.WOOL), Items.STRING, 3).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("wool"));

@@ -46,8 +46,8 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
 
     public ItemStack getFishBucket() {
         try {
-            if (getBucketItemStack == null) //TODO OBF
-                getBucketItemStack = ObfuscationReflectionHelper.findMethod(AbstractFishEntity.class, "getBucketItemStack");
+            if (getBucketItemStack == null)
+                getBucketItemStack = ObfuscationReflectionHelper.findMethod(AbstractFishEntity.class, "func_203707_dx");
             return entityType == null ? ItemStack.EMPTY : (ItemStack) getBucketItemStack.invoke(entityType.create(level));
         } catch (InvocationTargetException | IllegalAccessException ignored) {
             return ItemStack.EMPTY;

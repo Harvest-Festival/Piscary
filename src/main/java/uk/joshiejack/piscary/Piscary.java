@@ -18,7 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
-import uk.joshiejack.piscary.client.data.PiscaryItemModels;
+import uk.joshiejack.piscary.data.PiscaryItemModels;
 import uk.joshiejack.piscary.crafting.PiscaryRegistries;
 import uk.joshiejack.piscary.data.*;
 import uk.joshiejack.piscary.entity.PiscaryEntities;

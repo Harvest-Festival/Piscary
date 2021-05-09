@@ -6,10 +6,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.data.TagsProvider;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import uk.joshiejack.penguinlib.data.PenguinTags;
+import uk.joshiejack.penguinlib.util.PenguinTags;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.item.PiscaryItems;
 
@@ -23,7 +22,6 @@ public class PiscaryItemTags extends ItemTagsProvider {
 
     @Override
     public void addTags() {
-        tag(PenguinTags.BREAD).add(Items.BREAD);
         List<Item> fishes = Lists.newArrayList(PiscaryItems.ANCHOVY.get(), PiscaryItems.ANGELFISH.get(), PiscaryItems.ANGLERFISH.get(), PiscaryItems.BASS.get()
                 , PiscaryItems.BLUE_TANG.get(), PiscaryItems.BOWFIN.get(), PiscaryItems.BUTTERFLYFISH.get(), PiscaryItems.CARP.get()
                 , PiscaryItems.CATFISH.get(), PiscaryItems.CHUB.get()
@@ -33,10 +31,9 @@ public class PiscaryItemTags extends ItemTagsProvider {
                 , PiscaryItems.PICKEREL.get(), PiscaryItems.PIRANHA.get(), PiscaryItems.PUPFISH.get()
                 , PiscaryItems.SARDINE.get(), PiscaryItems.SIAMESE_FIGHTING_FISH.get(), PiscaryItems.STARGAZER.get()
                 , PiscaryItems.STINGRAY.get(), PiscaryItems.SILVER_STRIPE_BLAASOP.get(), PiscaryItems.TROUT.get(), PiscaryItems.TUNA.get()
-                , PiscaryItems.WALLEYE.get(), Items.COD, Items.SALMON, Items.PUFFERFISH, Items.TROPICAL_FISH);
+                , PiscaryItems.WALLEYE.get());
         TagsProvider.Builder<Item> rawTag = tag(PenguinTags.RAW_FISHES);
         TagsProvider.Builder<Item> allTag = tag(ItemTags.FISHES);
-
 
         fishes.forEach(fish -> {
             rawTag.add(fish);

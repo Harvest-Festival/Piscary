@@ -19,10 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
 import uk.joshiejack.piscary.client.model.*;
-import uk.joshiejack.piscary.client.renderer.FishRenderer;
-import uk.joshiejack.piscary.client.renderer.FishTrapTileEntityRenderer;
-import uk.joshiejack.piscary.client.renderer.HatcheryTileEntityRenderer;
-import uk.joshiejack.piscary.client.renderer.RayRenderer;
+import uk.joshiejack.piscary.client.renderer.*;
 import uk.joshiejack.piscary.entity.PiscaryEntities;
 import uk.joshiejack.piscary.item.PiscaryItems;
 import uk.joshiejack.piscary.tile.PiscaryTileEntities;
@@ -37,6 +34,7 @@ public class PiscaryClient {
     public static void registerModels(ModelRegistryEvent event) {
         ClientRegistry.bindTileEntityRenderer(PiscaryTileEntities.FISH_TRAP.get(), (FishTrapTileEntityRenderer::new));
         ClientRegistry.bindTileEntityRenderer(PiscaryTileEntities.HATCHERY.get(), (HatcheryTileEntityRenderer::new));
+        ClientRegistry.bindTileEntityRenderer(PiscaryTileEntities.RECYCLER.get(), (RecyclerTileEntityRenderer::new));
     }
 
     @SuppressWarnings("unchecked, rawtypes")

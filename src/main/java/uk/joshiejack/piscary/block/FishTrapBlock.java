@@ -17,7 +17,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
-import uk.joshiejack.penguinlib.block.base.AbstractInventoryBlock;
+import uk.joshiejack.penguinlib.block.base.AbstractPenguinBlock;
 import uk.joshiejack.penguinlib.util.helpers.minecraft.FakePlayerHelper;
 import uk.joshiejack.piscary.crafting.BaitRegistry;
 import uk.joshiejack.piscary.tile.FishTrapTileEntity;
@@ -28,12 +28,13 @@ import java.util.Locale;
 import java.util.Random;
 
 
-public class FishTrapBlock extends AbstractInventoryBlock implements IWaterLoggable {
+public class FishTrapBlock extends AbstractPenguinBlock implements IWaterLoggable {
     public static final EnumProperty<FishTrapState> TRAP_STATE = EnumProperty.create("state", FishTrapState.class);
 
     public FishTrapBlock() {
         super(AbstractBlock.Properties.of(Material.CORAL).strength(0.1F).sound(SoundType.WOOL));
         registerDefaultState(stateDefinition.any().setValue(TRAP_STATE, FishTrapState.EMPTY));
+        hasInventory = true;
     }
 
     @SuppressWarnings("deprecation")
