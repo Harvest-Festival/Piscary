@@ -29,8 +29,8 @@ import uk.joshiejack.piscary.tile.PiscaryTileEntities;
 import javax.annotation.Nonnull;
 
 
-@Mod(Piscary.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod(Piscary.MODID)
 public class Piscary {
     public static final String MODID = "piscary";
     public static final Logger LOGGER = LogManager.getLogger();

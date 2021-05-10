@@ -6,8 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.loot.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 import uk.joshiejack.penguinlib.data.database.CSVUtils;
 import uk.joshiejack.penguinlib.data.database.DatabaseProvider;
 import uk.joshiejack.piscary.Piscary;
@@ -68,37 +66,35 @@ public class PiscaryDatabase extends DatabaseProvider {
         addHatcheryEntry(PiscaryEntities.TUNA, 5);
         addHatcheryEntry(PiscaryEntities.WALLEYE, 3);
         //################# AQUACULTURE HATCHERY ##################//
-        if (ModList.get().isLoaded("aquaculture")) {
-            addAquacultureHatcheryEntry("atlantic_cod", 6);
-            addAquacultureHatcheryEntry("blackfish", 5);
-            addAquacultureHatcheryEntry("pacific_halibut", 7);
-            addAquacultureHatcheryEntry("atlantic_halibut", 7);
-            addAquacultureHatcheryEntry("atlantic_herring", 3);
-            addAquacultureHatcheryEntry("pink_salmon", 6);
-            addAquacultureHatcheryEntry("pollock", 5);
-            addAquacultureHatcheryEntry("rainbow_trout", 6);
-            addAquacultureHatcheryEntry("bayad", 6);
-            addAquacultureHatcheryEntry("boulti", 5);
-            addAquacultureHatcheryEntry("capitaine", 7);
-            addAquacultureHatcheryEntry("synodontis", 3);
-            addAquacultureHatcheryEntry("smallmouth_bass", 5);
-            addAquacultureHatcheryEntry("bluegill", 3);
-            addAquacultureHatcheryEntry("brown_trout", 5);
-            addAquacultureHatcheryEntry("carp", 5);
-            addAquacultureHatcheryEntry("catfish", 5);
-            addAquacultureHatcheryEntry("gar", 6);
-            addAquacultureHatcheryEntry("minnow", 4);
-            addAquacultureHatcheryEntry("muskellunge", 7);
-            addAquacultureHatcheryEntry("perch", 3);
-            addAquacultureHatcheryEntry("arapaima", 7);
-            addAquacultureHatcheryEntry("piranha", 7);
-            addAquacultureHatcheryEntry("tambaqui", 6);
-            addAquacultureHatcheryEntry("brown_shrooma", 2);
-            addAquacultureHatcheryEntry("red_shrooma", 2);
-            addAquacultureHatcheryEntry("jellyfish", 5);
-            addAquacultureHatcheryEntry("red_grouper", 6);
-            addAquacultureHatcheryEntry("tuna", 7);
-        }
+        addAquacultureHatcheryEntry("atlantic_cod", 6);
+        addAquacultureHatcheryEntry("blackfish", 5);
+        addAquacultureHatcheryEntry("pacific_halibut", 7);
+        addAquacultureHatcheryEntry("atlantic_halibut", 7);
+        addAquacultureHatcheryEntry("atlantic_herring", 3);
+        addAquacultureHatcheryEntry("pink_salmon", 6);
+        addAquacultureHatcheryEntry("pollock", 5);
+        addAquacultureHatcheryEntry("rainbow_trout", 6);
+        addAquacultureHatcheryEntry("bayad", 6);
+        addAquacultureHatcheryEntry("boulti", 5);
+        addAquacultureHatcheryEntry("capitaine", 7);
+        addAquacultureHatcheryEntry("synodontis", 3);
+        addAquacultureHatcheryEntry("smallmouth_bass", 5);
+        addAquacultureHatcheryEntry("bluegill", 3);
+        addAquacultureHatcheryEntry("brown_trout", 5);
+        addAquacultureHatcheryEntry("carp", 5);
+        addAquacultureHatcheryEntry("catfish", 5);
+        addAquacultureHatcheryEntry("gar", 6);
+        addAquacultureHatcheryEntry("minnow", 4);
+        addAquacultureHatcheryEntry("muskellunge", 7);
+        addAquacultureHatcheryEntry("perch", 3);
+        addAquacultureHatcheryEntry("arapaima", 7);
+        addAquacultureHatcheryEntry("piranha", 7);
+        addAquacultureHatcheryEntry("tambaqui", 6);
+        addAquacultureHatcheryEntry("brown_shrooma", 2);
+        addAquacultureHatcheryEntry("red_shrooma", 2);
+        addAquacultureHatcheryEntry("jellyfish", 5);
+        addAquacultureHatcheryEntry("red_grouper", 6);
+        addAquacultureHatcheryEntry("tuna", 7);
         //################# FISH SPAWN SETTINGS ##################//
         addFishSpawnSettings(PiscaryEntities.ANCHOVY, 22, 8, 12);
         addFishSpawnSettings(PiscaryEntities.ANGELFISH, 3, 3, 5);
@@ -194,22 +190,27 @@ public class PiscaryDatabase extends DatabaseProvider {
     }
 
     protected void addAquacultureBait(String name, ResourceLocation lootTable, int speed, int luck) {
-        if (ModList.get().isLoaded("aquaculture"))
-            addBait(() -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("aquaculture", name)), lootTable, speed, luck);
+        addBait(new ResourceLocation("aquaculture", name).toString(), lootTable.toString(), speed, luck);
     }
 
     protected void addAquacultureHatcheryEntry(String name, int days) {
-        if (ModList.get().isLoaded("aquaculture"))
-            addHatcheryEntry(() -> ForgeRegistries.ENTITIES.getValue(new ResourceLocation("aquaculture", name)), days);
+        addHatcheryEntry(new ResourceLocation("aquaculture", name).toString(), days);
     }
 
     protected void addBait(Supplier<Item> item, ResourceLocation lootTable, int speed, int luck) {
-        addEntry("bait", "Item,Loot Table,Speed,Luck",
-                CSVUtils.join(Objects.requireNonNull(item.get().getRegistryName()).toString(), lootTable.toString(), speed, luck));
+        addBait(item.get().getRegistryName().toString(), lootTable.toString(), speed, luck);
+    }
+
+    protected void addBait(String itemRegistryName, String lootTable, int speed, int luck) {
+        addEntry("bait", "Item,Loot Table,Speed,Luck", CSVUtils.join(itemRegistryName, lootTable, speed, luck));
     }
 
     protected void addHatcheryEntry(Supplier<EntityType<?>> entity, int days) {
         addEntry("hatchery", "Entity,Days", CSVUtils.join(entity.get().getRegistryName().toString(), days));
+    }
+
+    protected void addHatcheryEntry(String entityRegistryName, int days) {
+        addEntry("hatchery", "Entity,Days", CSVUtils.join(entityRegistryName, days));
     }
 
     protected void addFishSpawns(Supplier<EntityType<?>> entity, SpawnType type, BiomeDictionary.Type biome) {
