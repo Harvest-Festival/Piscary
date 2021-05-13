@@ -6,11 +6,13 @@ import net.minecraft.item.Item;
 import net.minecraft.loot.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.BiomeDictionary;
+import uk.joshiejack.penguinlib.data.TimeUnitRegistry;
 import uk.joshiejack.penguinlib.data.database.CSVUtils;
-import uk.joshiejack.penguinlib.data.database.DatabaseProvider;
+import uk.joshiejack.penguinlib.data.generators.AbstractDatabaseProvider;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.entity.PiscaryEntities;
 import uk.joshiejack.piscary.item.PiscaryItems;
+import uk.joshiejack.piscary.tile.PiscaryTileEntities;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -20,13 +22,19 @@ import static net.minecraftforge.common.BiomeDictionary.Type.*;
 import static uk.joshiejack.piscary.data.PiscaryDatabase.SpawnType.EXCLUDE;
 import static uk.joshiejack.piscary.data.PiscaryDatabase.SpawnType.REQUIRE;
 
-public class PiscaryDatabase extends DatabaseProvider {
+public class PiscaryDatabase extends AbstractDatabaseProvider {
     public PiscaryDatabase(DataGenerator gen) {
         super(gen, Piscary.MODID);
     }
 
     @Override
     protected void addDatabaseEntries() {
+        addTimeUnitForMachine(PiscaryTileEntities.FISH_TRAP.get(), TimeUnitRegistry.Defaults.HALF_HOUR);
+        addTimeUnitForMachine(PiscaryTileEntities.RECYCLER.get(), TimeUnitRegistry.Defaults.HOUR);
+        addTimeUnitForMachine(PiscaryTileEntities.HATCHERY.get(), TimeUnitRegistry.Defaults.DAY);
+        addLootTableMerge(LootTables.FISHING_FISH);
+        addLootTableMerge(LootTables.FISHING_JUNK);
+        addLootTableMerge(LootTables.FISHING_TREASURE);
         addBait(PiscaryItems.BAIT, LootTables.FISHING_FISH, 1, 0);
         addAquacultureBait("worm", LootTables.FISHING_FISH, 1, 0);
         //################# FISH HATCHERY DATA ##################//
@@ -205,12 +213,12 @@ public class PiscaryDatabase extends DatabaseProvider {
         addEntry("bait", "Item,Loot Table,Speed,Luck", CSVUtils.join(itemRegistryName, lootTable, speed, luck));
     }
 
-    protected void addHatcheryEntry(Supplier<EntityType<?>> entity, int days) {
-        addEntry("hatchery", "Entity,Days", CSVUtils.join(entity.get().getRegistryName().toString(), days));
+    protected void addHatcheryEntry(Supplier<EntityType<?>> entity, int cycles) {
+        addEntry("hatchery", "Entity,Cycles", CSVUtils.join(entity.get().getRegistryName().toString(), cycles));
     }
 
     protected void addHatcheryEntry(String entityRegistryName, int days) {
-        addEntry("hatchery", "Entity,Days", CSVUtils.join(entityRegistryName, days));
+        addEntry("hatchery", "Entity,Cycles", CSVUtils.join(entityRegistryName, days));
     }
 
     protected void addFishSpawns(Supplier<EntityType<?>> entity, SpawnType type, BiomeDictionary.Type biome) {

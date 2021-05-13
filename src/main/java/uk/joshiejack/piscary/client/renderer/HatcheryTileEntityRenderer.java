@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.settings.GraphicsFanciness;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.passive.fish.PufferfishEntity;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -55,6 +56,10 @@ public class HatcheryTileEntityRenderer extends AbstractItemTileEntityRenderer<H
                 matrix.translate(1.35F, 0F, 1.35F);
                 matrix.mulPose(Vector3f.XP.rotationDegrees(clockwise ? -65F : 65F));
                 entity.setPose(Pose.SWIMMING);
+                if (entity instanceof PufferfishEntity) {
+                    matrix.mulPose(Vector3f.ZP.rotationDegrees(-90F));
+                }
+
                 if (System.currentTimeMillis() %60 == 0)
                     entity.tickCount++;
                 runAsFancy(() -> Minecraft.getInstance().getEntityRenderDispatcher().render(entity, 0, 0, 0, 0, 1.0F, matrix, buffer, 15728880));

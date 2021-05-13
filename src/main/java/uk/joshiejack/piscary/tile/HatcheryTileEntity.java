@@ -6,23 +6,24 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.fish.AbstractFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import uk.joshiejack.penguinlib.data.TimeUnitRegistry;
 import uk.joshiejack.penguinlib.network.PenguinNetwork;
 import uk.joshiejack.penguinlib.tile.AbstractPenguinTileEntity;
 import uk.joshiejack.penguinlib.util.helpers.generic.MathsHelper;
-import uk.joshiejack.penguinlib.util.helpers.minecraft.TerrainHelper;
 import uk.joshiejack.piscary.client.renderer.HatcheryFishRender;
 import uk.joshiejack.piscary.crafting.PiscaryRegistries;
 import uk.joshiejack.piscary.network.SyncHatcheryPacket;
@@ -37,7 +38,7 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
     private static Method getBucketItemStack = null;
     private EntityType<?> entityType = null;
     private int count = 0;
-    private int daysPassed = 0;
+    private int ticksPassed = 0;
     private int breakChance = 125;
 
     public HatcheryTileEntity() {
@@ -73,12 +74,12 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
         if (getEntityType() == null) return;
         if (level.isClientSide)
             renderer.updateFish();
-        if (count < 10 && isOnWaterSurface(level, worldPosition.below())) {
-            int days = PiscaryRegistries.getValue(getEntityType());
-            if (days >= 1) {
-                daysPassed++;
-                if (daysPassed >= days) {
-                    daysPassed = 0; //Reset
+        if (level.getGameTime() % 100 == 0 && count < 10) {
+            int ticksRequired = (int) (PiscaryRegistries.getValue(getEntityType()) * TimeUnitRegistry.get(getType().getRegistryName().toString()));
+            if (ticksRequired >= 1) {
+                ticksPassed += 100;
+                if (ticksPassed >= ticksRequired) {
+                    ticksPassed = 0; //Reset
                     count++;
                     setEntityTypeAndCount(entityType, count);
                 }
@@ -86,13 +87,25 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
         }
     }
 
-    public void spawnFish() {
+    public LivingEntity extractFish(boolean adjustCount) {
+        Entity entity = entityType.spawn((ServerWorld) level, ItemStack.EMPTY, null, worldPosition, SpawnReason.BUCKET, true, false);
+        if (entity != null) {
+            ((AbstractFishEntity) entity).setFromBucket(true);
+        }
+
+        //Helper boys
+        if (adjustCount) {
+            count--;
+            setEntityTypeAndCount(entityType, count);
+        }
+
+        return (LivingEntity) entity;
+    }
+
+    public void spawnFish(int count) {
         if (entityType != null) {
             for (int i = 0; i < count; i++) {
-                Entity entity = entityType.spawn((ServerWorld) level, ItemStack.EMPTY, null, worldPosition, SpawnReason.BUCKET, true, false);
-                if (entity != null) {
-                    ((AbstractFishEntity) entity).setFromBucket(true);
-                }
+                extractFish(false);
             }
         }
     }
@@ -103,16 +116,12 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
             BlockState state = level.getBlockState(worldPosition);
             level.setBlock(worldPosition, Blocks.WATER.defaultBlockState(), 2);
             level.levelEvent(null, 2001, worldPosition, Block.getId(state));
-            spawnFish();
+            spawnFish(count);
             return;
         } else breakChance -= 25;
 
         breakChance = MathsHelper.constrainToRangeInt(breakChance, 0, 100);
         markUpdated(); //Resync the count data
-    }
-
-    private boolean isOnWaterSurface(World world, BlockPos pos) {
-        return TerrainHelper.isWater(world, pos.east(), pos.west(), pos.north(), pos.south(), pos.east().south(), pos.east().north(), pos.west().north(), pos.west().south());
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -135,12 +144,18 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
     }
 
     @Override
+    public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket packet) {
+        super.onDataPacket(net, packet);
+        renderer.reloadFish(entityType, count, level.random);
+    }
+
+    @Override
     public void load(@Nonnull BlockState state, @Nonnull CompoundNBT nbt) {
         super.load(state, nbt);
         String internal = nbt.getString("Entity");
         entityType = Strings.isNullOrEmpty(internal) ? null : ForgeRegistries.ENTITIES.getValue(new ResourceLocation(internal));
         count = nbt.getByte("Count");
-        daysPassed = nbt.getInt("DaysPassed");
+        ticksPassed = nbt.getInt("TicksPassed");
         breakChance = nbt.getByte("TimesPulled");
     }
 
@@ -149,7 +164,7 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
     public CompoundNBT save(CompoundNBT nbt) {
         nbt.putString("Entity", entityType == null ? "" : entityType.getRegistryName().toString());
         nbt.putByte("Count", (byte) count);
-        nbt.putInt("DaysPassed", daysPassed);
+        nbt.putInt("TicksPassed", ticksPassed);
         nbt.putByte("TimesPulled", (byte) breakChance);
         return super.save(nbt);
     }

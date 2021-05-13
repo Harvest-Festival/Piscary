@@ -12,14 +12,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.tuple.Pair;
 import uk.joshiejack.penguinlib.events.DatabaseLoadedEvent;
-import uk.joshiejack.penguinlib.item.crafting.PenguinSingleItemRecipe;
+import uk.joshiejack.penguinlib.item.crafting.SimplePenguinRecipe;
 import uk.joshiejack.piscary.Piscary;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = Piscary.MODID)
 public class PiscaryRegistries {
     public static final DeferredRegister<IRecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Piscary.MODID);
-    public static final RegistryObject<IRecipeSerializer<RecyclerRecipe>> RECYCLER_SERIALIZER = SERIALIZERS.register("recycler", () -> new PenguinSingleItemRecipe.Serializer<>(RecyclerRecipe::new));
+    public static final RegistryObject<IRecipeSerializer<RecyclerRecipe>> RECYCLER_SERIALIZER = SERIALIZERS.register("recycler", () -> new SimplePenguinRecipe.Serializer<>(RecyclerRecipe::new));
     private static final Object2IntMap<EntityType<?>> HATCHERY = new Object2IntOpenHashMap<>();
     public static final IRecipeType<RecyclerRecipe> RECYCLER = IRecipeType.register(Piscary.MODID + ":recycler");
 
@@ -27,7 +27,7 @@ public class PiscaryRegistries {
     public static void onDatabaseLoaded(DatabaseLoadedEvent event) {
         HATCHERY.clear(); //Reset all the data in the hatchery :)
         event.table("hatchery").rows().stream()
-                .map(row -> Pair.of(row.entity(), row.getAsInt("days")))
+                .map(row -> Pair.of(row.entity(), row.getAsInt("cycles")))
                 .filter(pair -> pair.getKey() != null)
                 .forEach(pair -> HATCHERY.put(pair.getKey(), (int) pair.getValue()));
     }

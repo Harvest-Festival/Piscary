@@ -97,10 +97,6 @@ public class PiscaryLootTables extends LootTableProvider {
             this.addFishLootTable(PiscaryEntities.WALLEYE, PiscaryItems.WALLEYE, Items.BONE_MEAL);
         }
 
-        private void addFishLootTable(RegistryObject<EntityType<?>> type, RegistryObject<Item> fish) {
-            addFishLootTable(type, fish, Items.BONE_MEAL);
-        }
-
         private void addFishLootTable(RegistryObject<EntityType<?>> type, RegistryObject<Item> fish, Item bonus) {
             this.add(type.get(), LootTable.lootTable()
                     .withPool(LootPool.lootPool().setRolls(ConstantRange.exactly(1))

@@ -1,7 +1,0 @@
-{
-  "type": "loot_table:merge",
-  "data": {
-    "original": "minecraft:gameplay/fishing/fish",
-    "addition": "piscary:gameplay/fishing/fish"
-  }
-}

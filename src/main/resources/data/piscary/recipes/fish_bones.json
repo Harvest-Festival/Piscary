@@ -1,8 +1,0 @@
-{
-  "type": "piscary:recycler",
-  "ingredient": {
-    "item": "piscary:fish_bones"
-  },
-  "result": "minecraft:bone_meal",
-  "count": 2
-}

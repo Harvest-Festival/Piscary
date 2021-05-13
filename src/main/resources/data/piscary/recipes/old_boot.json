@@ -1,8 +1,0 @@
-{
-  "type": "piscary:recycler",
-  "ingredient": {
-    "item": "piscary:old_boot"
-  },
-  "result": "minecraft:lead",
-  "count": 1
-}

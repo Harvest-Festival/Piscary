@@ -3,9 +3,10 @@ package uk.joshiejack.piscary.tile;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import uk.joshiejack.penguinlib.data.database.registries.TimeUnitRegistry;
+import uk.joshiejack.penguinlib.data.TimeUnitRegistry;
 import uk.joshiejack.penguinlib.tile.inventory.AbstractInventoryTileEntity;
 import uk.joshiejack.penguinlib.util.helpers.minecraft.TerrainHelper;
+import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.block.FishTrapBlock;
 import uk.joshiejack.piscary.crafting.BaitRegistry;
 
@@ -35,8 +36,8 @@ public class FishTrapTileEntity extends AbstractInventoryTileEntity {
     }
 
     public int getTimeUnit() {
-        return (int) TimeUnitRegistry.get("half_hour") +
-                (level.random.nextInt((int) TimeUnitRegistry.get("hour"))) * (1 + level.random.nextInt(3));
+        long half = TimeUnitRegistry.get(Piscary.MODID + ":fish_trap");
+        return (int) half + (level.random.nextInt((int) half * 2) * (1 + level.random.nextInt(3)));
     }
 
     @Override

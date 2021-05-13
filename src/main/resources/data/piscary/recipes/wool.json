@@ -1,8 +1,0 @@
-{
-  "type": "piscary:recycler",
-  "ingredient": {
-    "tag": "minecraft:wool"
-  },
-  "result": "minecraft:string",
-  "count": 3
-}

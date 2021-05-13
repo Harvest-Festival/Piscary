@@ -39,6 +39,9 @@ public class HatcheryFishRender {
         for (int i = 0; i < tile.getCount(); i++) {
             rotations[i] = rotations[i] + (clockwise[i] ? -speed[i] * 10L : speed[i] * 10L);
         }
+
+
+        displayEntity.tickCount++;
     }
 
     @Nullable
