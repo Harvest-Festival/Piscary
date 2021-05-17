@@ -1,4 +1,4 @@
-package uk.joshiejack.piscary.tile;
+package uk.joshiejack.piscary.tileentity;
 
 import joptsimple.internal.Strings;
 import net.minecraft.block.Block;

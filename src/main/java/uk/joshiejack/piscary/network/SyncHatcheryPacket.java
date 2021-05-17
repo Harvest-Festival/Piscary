@@ -11,7 +11,7 @@ import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.registries.ForgeRegistries;
 import uk.joshiejack.penguinlib.network.packet.BlockRenderUpdatePacket;
 import uk.joshiejack.penguinlib.util.PenguinLoader;
-import uk.joshiejack.piscary.tile.HatcheryTileEntity;
+import uk.joshiejack.piscary.tileentity.HatcheryTileEntity;
 
 @PenguinLoader.Packet(NetworkDirection.PLAY_TO_CLIENT)
 public class SyncHatcheryPacket extends BlockRenderUpdatePacket {

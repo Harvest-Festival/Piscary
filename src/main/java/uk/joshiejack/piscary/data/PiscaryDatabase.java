@@ -12,7 +12,7 @@ import uk.joshiejack.penguinlib.data.generators.AbstractDatabaseProvider;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.entity.PiscaryEntities;
 import uk.joshiejack.piscary.item.PiscaryItems;
-import uk.joshiejack.piscary.tile.PiscaryTileEntities;
+import uk.joshiejack.piscary.tileentity.PiscaryTileEntities;
 
 import java.util.Locale;
 import java.util.Objects;

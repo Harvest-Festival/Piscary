@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
 import net.minecraftforge.items.IItemHandler;
 import uk.joshiejack.penguinlib.block.base.AbstractDoubleBlock;
-import uk.joshiejack.piscary.tile.RecyclerTileEntity;
+import uk.joshiejack.piscary.tileentity.RecyclerTileEntity;
 
 import javax.annotation.Nonnull;
 

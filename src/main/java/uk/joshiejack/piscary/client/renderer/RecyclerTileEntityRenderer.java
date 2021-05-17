@@ -4,7 +4,7 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import uk.joshiejack.penguinlib.client.renderer.tile.AbstractMachineTileEntityRenderer;
-import uk.joshiejack.piscary.tile.RecyclerTileEntity;
+import uk.joshiejack.piscary.tileentity.RecyclerTileEntity;
 
 @SuppressWarnings("unused")
 @OnlyIn(Dist.CLIENT)

@@ -1,4 +1,4 @@
-package uk.joshiejack.piscary.tile;
+package uk.joshiejack.piscary.tileentity;
 
 import uk.joshiejack.penguinlib.tile.machine.AbstractIRecipeMachine;
 import uk.joshiejack.piscary.crafting.PiscaryRegistries;

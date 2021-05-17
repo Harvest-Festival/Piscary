@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.items.ItemHandlerHelper;
 import uk.joshiejack.penguinlib.block.base.AbstractPenguinBlock;
-import uk.joshiejack.piscary.tile.HatcheryTileEntity;
+import uk.joshiejack.piscary.tileentity.HatcheryTileEntity;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;

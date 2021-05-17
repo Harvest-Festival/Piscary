@@ -20,7 +20,7 @@ import net.minecraft.world.server.ServerWorld;
 import uk.joshiejack.penguinlib.block.base.AbstractPenguinBlock;
 import uk.joshiejack.penguinlib.util.helpers.minecraft.FakePlayerHelper;
 import uk.joshiejack.piscary.crafting.BaitRegistry;
-import uk.joshiejack.piscary.tile.FishTrapTileEntity;
+import uk.joshiejack.piscary.tileentity.FishTrapTileEntity;
 
 import javax.annotation.Nonnull;
 import java.util.List;

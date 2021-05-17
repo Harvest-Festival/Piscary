@@ -3,6 +3,7 @@ package uk.joshiejack.piscary.entity;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.item.PaintingType;
 import net.minecraft.entity.passive.fish.AbstractFishEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.FishBucketItem;
@@ -28,6 +29,7 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(modid = Piscary.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PiscaryEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, Piscary.MODID);
+    public static final DeferredRegister<PaintingType> PAINTINGS = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, Piscary.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Piscary.MODID);
     private static List<Pair<String, Supplier<SpawnEggItem>>> SPAWN_EGGS = new ArrayList<>(); //Temporary Pairings, to ensure all buckets and eggs appear in order
     public static final RegistryObject<EntityType<?>> ANCHOVY = register("anchovy", AnchovyEntity::new, 0.5F, 0.3F, 0xDBE4DF, 0x507853);
@@ -62,6 +64,11 @@ public class PiscaryEntities {
     public static final RegistryObject<EntityType<?>> TROUT = register("trout", TroutEntity::new, 0.7F, 0.4F, 0xC5929D, 0x6D5635);
     public static final RegistryObject<EntityType<?>> TUNA = register("tuna", TunaEntity::new, 0.7F, 0.5F, 0x93A097, 0x4A576F);
     public static final RegistryObject<EntityType<?>> WALLEYE = register("walleye", WalleyeEntity::new, 0.7F, 0.4F, 0xE2BD65, 0x363932);
+    public static final RegistryObject<PaintingType> ALBATROSS = PAINTINGS.register("albatross", () -> new PaintingType(16, 16));
+    public static final RegistryObject<PaintingType> BOATS = PAINTINGS.register("boats", () -> new PaintingType(16, 16));
+    public static final RegistryObject<PaintingType> LIGHTHOUSE = PAINTINGS.register("lighthouse", () -> new PaintingType(32, 16));
+    public static final RegistryObject<PaintingType> SUNSET = PAINTINGS.register("sunset", () -> new PaintingType(16, 16));
+    public static final RegistryObject<PaintingType> WINDOW = PAINTINGS.register("window", () -> new PaintingType(32, 16));
 
     private static <T extends Entity> RegistryObject<EntityType<?>> register(String name, EntityType.IFactory<T> factory, float width, float height, int colorPrimary, int colorSecondary) {
         EntityType<?> type = EntityType.Builder.of(factory,

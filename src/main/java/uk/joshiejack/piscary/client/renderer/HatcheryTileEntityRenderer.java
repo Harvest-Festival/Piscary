@@ -14,7 +14,7 @@ import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import uk.joshiejack.penguinlib.client.renderer.tile.AbstractItemTileEntityRenderer;
-import uk.joshiejack.piscary.tile.HatcheryTileEntity;
+import uk.joshiejack.piscary.tileentity.HatcheryTileEntity;
 
 import javax.annotation.Nonnull;
 

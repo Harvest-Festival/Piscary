@@ -22,7 +22,7 @@ import uk.joshiejack.piscary.client.model.*;
 import uk.joshiejack.piscary.client.renderer.*;
 import uk.joshiejack.piscary.entity.PiscaryEntities;
 import uk.joshiejack.piscary.item.PiscaryItems;
-import uk.joshiejack.piscary.tile.PiscaryTileEntities;
+import uk.joshiejack.piscary.tileentity.PiscaryTileEntities;
 
 import java.util.HashMap;
 import java.util.Map;

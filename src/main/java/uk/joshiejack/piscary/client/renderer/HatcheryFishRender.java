@@ -4,7 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import uk.joshiejack.piscary.tile.HatcheryTileEntity;
+import uk.joshiejack.piscary.tileentity.HatcheryTileEntity;
 
 import javax.annotation.Nullable;
 import java.util.Objects;

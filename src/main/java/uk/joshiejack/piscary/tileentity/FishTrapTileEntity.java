@@ -1,4 +1,4 @@
-package uk.joshiejack.piscary.tile;
+package uk.joshiejack.piscary.tileentity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;

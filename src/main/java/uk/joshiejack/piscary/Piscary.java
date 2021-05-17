@@ -18,13 +18,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
-import uk.joshiejack.piscary.data.PiscaryItemModels;
 import uk.joshiejack.piscary.crafting.PiscaryRegistries;
 import uk.joshiejack.piscary.data.*;
 import uk.joshiejack.piscary.entity.PiscaryEntities;
 import uk.joshiejack.piscary.item.PiscaryItems;
 import uk.joshiejack.piscary.loot.BiomeTypeLocationCheck;
-import uk.joshiejack.piscary.tile.PiscaryTileEntities;
+import uk.joshiejack.piscary.tileentity.PiscaryTileEntities;
 
 import javax.annotation.Nonnull;
 
@@ -48,6 +47,7 @@ public class Piscary {
         PiscaryItems.ITEMS.register(eventBus);
         PiscaryEntities.ENTITIES.register(eventBus);
         PiscaryEntities.ITEMS.register(eventBus);
+        PiscaryEntities.PAINTINGS.register(eventBus);
         PiscaryRegistries.SERIALIZERS.register(eventBus);
         PiscaryTileEntities.TILE_ENTITIES.register(eventBus);
     }

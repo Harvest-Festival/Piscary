@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import uk.joshiejack.penguinlib.client.renderer.tile.AbstractItemTileEntityRenderer;
-import uk.joshiejack.piscary.tile.FishTrapTileEntity;
+import uk.joshiejack.piscary.tileentity.FishTrapTileEntity;
 
 import javax.annotation.Nonnull;
 
