@@ -28,7 +28,7 @@ public class PiscaryRecipes extends RecipeProvider {
     @Override
     protected void buildShapelessRecipes(@Nonnull Consumer<IFinishedRecipe> consumer) {
         //Food
-        ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_FINGERS::get).requires(PenguinTags.RAW_FISHES).requires(PenguinTags.BREAD).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_bread", has(PenguinTags.BREAD)).save(consumer, rl("fish_fingers"));
+        ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_FINGERS::get).requires(PenguinTags.RAW_FISHES).requires(PenguinTags.BREADS).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_bread", has(PenguinTags.BREADS)).save(consumer, rl("fish_fingers"));
         ShapelessRecipeBuilder.shapeless(PiscaryItems.SASHIMI::get).requires(PenguinTags.RAW_FISHES).unlockedBy("has_fishes", has(ItemTags.FISHES)).save(consumer, rl("sashimi"));
         ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_STEW::get).requires(PenguinTags.RAW_FISHES).requires(Tags.Items.CROPS_CARROT).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_carrot", has(Tags.Items.CROPS_CARROT)).save(consumer, rl("fish_stew"));
         //Rod & Bait

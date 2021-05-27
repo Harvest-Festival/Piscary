@@ -116,7 +116,7 @@ e428b7c5dd52d41e9ae490f9796a9071386f6075 data/piscary/advancements/recipes/misc/
 7a1ddff919fa0b588ba3a4a19075c1232c8c5ffb data/piscary/advancements/recipes/misc/tin_can.json
 57a38d6e367b536b39b6b2dce9047a5356e03116 data/piscary/advancements/recipes/misc/wool.json
 60b9481f4e4a6e262f9c2ea37a0a0b6f027ee6eb data/piscary/advancements/recipes/piscary/bait.json
-397c0c2812fd1eb747cd4e407ac7b39ec8f2ca4c data/piscary/advancements/recipes/piscary/fish_fingers.json
+7ee1da36c8977e908cfbcf9cbe4546fcf622a469 data/piscary/advancements/recipes/piscary/fish_fingers.json
 71e5c03d755b0c46b48991add3cf6d0cde4df69c data/piscary/advancements/recipes/piscary/fish_stew.json
 f3b39fd066f40a8e6e5c2abebc7d492a87ed820d data/piscary/advancements/recipes/piscary/fish_trap.json
 6c99684c3c0bcadd716b08842cfed893ecb2add3 data/piscary/advancements/recipes/piscary/fishing_rod.json
@@ -169,7 +169,7 @@ c77e377428dd1c180b8a8c060571402cb68138bf data/piscary/loot_tables/gameplay/fishi
 f12cd8ce760165e01d745933c286b229628a7923 data/piscary/loot_tables/gameplay/fishing/treasure.json
 28e1be93ec1dc02d9ca89fcc1259d70be31573a8 data/piscary/recipes/bait.json
 fc6b2eb015599c600379c6645198a92c84cb01e9 data/piscary/recipes/fish_bones.json
-7f02e716c4736238bc5e94b7e90e43d637cc909e data/piscary/recipes/fish_fingers.json
+b5841144a4bb610cd9907bd7c1b2e2e1486208c1 data/piscary/recipes/fish_fingers.json
 7d49262ff075a540b4ed401bf9089a2458f3bd8c data/piscary/recipes/fish_stew.json
 2a7c35c9f56b7566372a5e6d9f423c72bb23de67 data/piscary/recipes/fish_trap.json
 583b94fe6d67530a914eed7b12bef6d984ae1235 data/piscary/recipes/fishing_rod.json

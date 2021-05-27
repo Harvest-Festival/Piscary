@@ -3,25 +3,25 @@ loaderVersion="[36,)"
 license="MIT"
 [[mods]]
     modId="piscary"
-    version="${mod_version}"
+    version="${file.jarVersion}"
     displayName="Piscary"
     authors="joshiejack"
-    description='''Booya'''
+    description='''Fish, Fish Trap, Hatchery, Recycler...'''
 [[dependencies.piscary]]
     modId="forge"
     mandatory=true
-    versionRange="${forge_range}"
+    versionRange="[36,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.piscary]]
     modId="minecraft"
     mandatory=true
-    versionRange="${minecraft_range}"
+    versionRange="[1.16.5,1.17)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.piscary]]
     modId="penguinlib"
     mandatory=true
-    versionRange="${penguinlib_range}"
+    versionRange="[0.2,)"
     ordering="NONE"
     side="BOTH"
