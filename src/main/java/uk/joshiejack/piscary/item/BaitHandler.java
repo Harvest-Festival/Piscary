@@ -53,7 +53,7 @@ public class BaitHandler {
         if (!fishingRod.isEmpty()) return;
         ItemStack bait = getBaitStack(fishingRod);
         if (!bait.isEmpty()) return;
-        BaitRegistry.BaitData data = BaitRegistry.INSTANCE.getValue(bait);
+        BaitRegistry.BaitData data = BaitRegistry.getValue(bait);
         int enchantability = fishingRod.getItemEnchantability();
         int speedBoost = enchantability * data.getSpeed() + 35;
         int luckBoost = data.getLuck();

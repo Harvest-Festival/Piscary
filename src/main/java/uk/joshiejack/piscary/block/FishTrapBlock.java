@@ -58,7 +58,7 @@ public class FishTrapBlock extends AbstractPenguinBlock implements IWaterLoggabl
 
     private ResourceLocation getLootTable(ItemStack bait, Random random) {
         if (random.nextInt(4) == 0) {
-            ResourceLocation lootTable = BaitRegistry.INSTANCE.getValue(bait).getLootTable();
+            ResourceLocation lootTable = BaitRegistry.getValue(bait).getLootTable();
             return lootTable != BaitRegistry.BaitData.EMPTY.getLootTable() ? lootTable : LootTables.FISHING_FISH;
         } else return LootTables.FISHING_JUNK;
     }

@@ -7,15 +7,16 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import uk.joshiejack.penguinlib.PenguinLib;
-import uk.joshiejack.penguinlib.data.holder.HolderRegistry;
 import uk.joshiejack.penguinlib.events.DatabaseLoadedEvent;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = PenguinLib.MODID)
 public class BaitRegistry {
-    public static final HolderRegistry<BaitData> INSTANCE = new HolderRegistry<>(BaitData.EMPTY);
+    private static final Map<Item, BaitData> INSTANCE = new HashMap<>();
 
     @SubscribeEvent
     public static void onDatabaseLoaded(DatabaseLoadedEvent event) {
@@ -23,12 +24,16 @@ public class BaitRegistry {
         event.table("bait").rows().forEach(row -> {
             Item item = row.item();
             if (item != null)
-                INSTANCE.register(item, new BaitData(row.get("loot table"), row.getColor("speed"), row.getAsInt("luck")));
+                INSTANCE.put(item, new BaitData(row.get("loot table"), row.getColor("speed"), row.getAsInt("luck")));
         });
     }
 
+    public static BaitData getValue(ItemStack stack) {
+        return INSTANCE.getOrDefault(stack.getItem(), BaitData.EMPTY);
+    }
+
     public static boolean isBait(ItemStack stack) {
-        return INSTANCE.getValue(stack) != BaitData.EMPTY;
+        return INSTANCE.containsKey(stack.getItem());
     }
 
     public static class BaitData {

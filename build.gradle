@@ -122,12 +122,15 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            artifactId 'Piscary'
             artifact jar
         }
     }
     repositories {
-        maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
+        if (project.hasProperty('mavenRepository')) {
+            maven { url mavenRepository }
+        } else {
+            mavenLocal()
         }
     }
 }
