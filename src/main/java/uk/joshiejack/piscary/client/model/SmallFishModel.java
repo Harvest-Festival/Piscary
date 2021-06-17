@@ -8,7 +8,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class SmallFishModel extends AbstractFishModel {
     public SmallFishModel() {
         texWidth = 32;
-        texHeight = 32;
+        texHeight = 16;
 
         tail = new ModelRenderer(this);
         tail.setPos(0.0F, 23.0F, 5.0F);
