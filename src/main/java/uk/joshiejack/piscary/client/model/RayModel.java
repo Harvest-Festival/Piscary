@@ -23,27 +23,27 @@ public class RayModel extends AbstractFishModel {
 
 		tail = new ModelRenderer(this);
 		tail.setPos(0.0F, 20.0F, 15.0F);
-		tail.setTexSize(35, 65).addBox(-0.5F, 1.0F, -1.0F, 1.0F, 1.0F, 13.0F, 0.0F, false);
+		tail.texOffs(35, 65).addBox(-0.5F, 1.0F, -1.0F, 1.0F, 1.0F, 13.0F, 0.0F, false);
 
 		body = new ModelRenderer(this);
 		body.setPos(0.0F, 24.0F, 0.0F);
-		body.setTexSize(0, 26).addBox(-4.0F, -1.0F, -7.0F, 8.0F, 1.0F, 22.0F, 0.0F, false);
-		body.setTexSize(39, 28).addBox(-4.0F, -6.0F, -6.0F, 8.0F, 2.0F, 21.0F, 0.0F, false);
-		body.setTexSize(0, 0).addBox(-5.0F, -4.0F, -8.0F, 10.0F, 3.0F, 23.0F, 0.0F, false);
+		body.texOffs(0, 26).addBox(-4.0F, -1.0F, -7.0F, 8.0F, 1.0F, 22.0F, 0.0F, false);
+		body.texOffs(39, 28).addBox(-4.0F, -6.0F, -6.0F, 8.0F, 2.0F, 21.0F, 0.0F, false);
+		body.texOffs(0, 0).addBox(-5.0F, -4.0F, -8.0F, 10.0F, 3.0F, 23.0F, 0.0F, false);
 
 		wing_left = new ModelRenderer(this);
 		wing_left.setPos(4.0F, 21.0F, 4.0F);
-		wing_left.setTexSize(0, 49).addBox(0.0F, -0.5F, -9.0F, 6.0F, 2.0F, 18.0F, 0.0F, false);
-		wing_left.setTexSize(52, 53).addBox(6.0F, -0.5F, -8.0F, 5.0F, 2.0F, 12.0F, 0.0F, false);
-		wing_left.setTexSize(0, 8).addBox(11.0F, -0.5F, -6.0F, 5.0F, 2.0F, 6.0F, 0.0F, false);
-		wing_left.setTexSize(0, 26).addBox(16.0F, -0.5F, -5.0F, 5.0F, 2.0F, 4.0F, 0.0F, false);
+		wing_left.texOffs(0, 49).addBox(0.0F, -0.5F, -9.0F, 6.0F, 2.0F, 18.0F, 0.0F, false);
+		wing_left.texOffs(52, 53).addBox(6.0F, -0.5F, -8.0F, 5.0F, 2.0F, 12.0F, 0.0F, false);
+		wing_left.texOffs(0, 8).addBox(11.0F, -0.5F, -6.0F, 5.0F, 2.0F, 6.0F, 0.0F, false);
+		wing_left.texOffs(0, 26).addBox(16.0F, -0.5F, -5.0F, 5.0F, 2.0F, 4.0F, 0.0F, false);
 
 		wing_right = new ModelRenderer(this);
 		wing_right.setPos(-4.0F, 21.0F, 4.0F);
-		wing_right.setTexSize(43, 0).addBox(-6.0F, -0.5F, -9.0F, 6.0F, 2.0F, 18.0F, 0.0F, false);
-		wing_right.setTexSize(30, 51).addBox(-11.0F, -0.5F, -8.0F, 5.0F, 2.0F, 12.0F, 0.0F, false);
-		wing_right.setTexSize(0, 0).addBox(-16.0F, -0.5F, -6.0F, 5.0F, 2.0F, 6.0F, 0.0F, false);
-		wing_right.setTexSize(0, 16).addBox(-21.0F, -0.5F, -5.0F, 5.0F, 2.0F, 4.0F, 0.0F, false);
+		wing_right.texOffs(43, 0).addBox(-6.0F, -0.5F, -9.0F, 6.0F, 2.0F, 18.0F, 0.0F, false);
+		wing_right.texOffs(30, 51).addBox(-11.0F, -0.5F, -8.0F, 5.0F, 2.0F, 12.0F, 0.0F, false);
+		wing_right.texOffs(0, 0).addBox(-16.0F, -0.5F, -6.0F, 5.0F, 2.0F, 6.0F, 0.0F, false);
+		wing_right.texOffs(0, 16).addBox(-21.0F, -0.5F, -5.0F, 5.0F, 2.0F, 4.0F, 0.0F, false);
 	}
 
 	@Override

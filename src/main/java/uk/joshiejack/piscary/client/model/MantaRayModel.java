@@ -16,13 +16,13 @@ public class MantaRayModel extends RayModel {
 		filter1.setPos(1.0F, 2.75F, -6.05F);
 		body.addChild(filter1);
 		setRotationAngle(filter1, -0.9599F, 0.0F, -0.1309F);
-		filter1.setTexSize(0, 32).addBox(-4.0F, -2.0F, -8.0F, 2.0F, 7.0F, 2.0F, 0.0F, false);
+		filter1.texOffs(0, 32).addBox(-4.0F, -2.0F, -8.0F, 2.0F, 7.0F, 2.0F, 0.0F, false);
 
 		ModelRenderer filter2 = new ModelRenderer(this);
 		filter2.setPos(1.0F, 2.75F, -6.05F);
 		body.addChild(filter2);
 		setRotationAngle(filter2, -0.9599F, 0.0F, 0.1309F);
-		filter2.setTexSize(8, 32).addBox(0.0F, -2.0F, -8.0F, 2.0F, 7.0F, 2.0F, 0.0F, false);
+		filter2.texOffs(8, 32).addBox(0.0F, -2.0F, -8.0F, 2.0F, 7.0F, 2.0F, 0.0F, false);
 	}
 
 	@Override
