@@ -1,7 +1,10 @@
 package uk.joshiejack.piscary.client.model;
 
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class FatFishModel extends AbstractFishModel {
     public FatFishModel() {
         texWidth = 64;

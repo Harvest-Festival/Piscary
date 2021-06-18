@@ -1,7 +1,10 @@
 package uk.joshiejack.piscary.client.model;
 
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class ElectricRayModel extends RayModel {
     public ElectricRayModel() {
         super(0.75F);
