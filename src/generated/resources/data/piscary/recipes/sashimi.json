@@ -3,6 +3,9 @@
   "ingredients": [
     {
       "tag": "forge:raw_fishes"
+    },
+    {
+      "item": "penguinlib:plate"
     }
   ],
   "result": {

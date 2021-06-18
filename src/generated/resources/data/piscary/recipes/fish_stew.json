@@ -6,6 +6,9 @@
     },
     {
       "tag": "forge:crops/carrot"
+    },
+    {
+      "item": "penguinlib:deep_bowl"
     }
   ],
   "result": {

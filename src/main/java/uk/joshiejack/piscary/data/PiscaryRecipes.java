@@ -7,6 +7,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
+import uk.joshiejack.penguinlib.item.PenguinItems;
 import uk.joshiejack.penguinlib.util.PenguinTags;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
@@ -28,9 +29,9 @@ public class PiscaryRecipes extends RecipeProvider {
     @Override
     protected void buildShapelessRecipes(@Nonnull Consumer<IFinishedRecipe> consumer) {
         //Food
-        ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_FINGERS::get).requires(PenguinTags.RAW_FISHES).requires(PenguinTags.BREADS).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_bread", has(PenguinTags.BREADS)).save(consumer, rl("fish_fingers"));
-        ShapelessRecipeBuilder.shapeless(PiscaryItems.SASHIMI::get).requires(PenguinTags.RAW_FISHES).unlockedBy("has_fishes", has(ItemTags.FISHES)).save(consumer, rl("sashimi"));
-        ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_STEW::get).requires(PenguinTags.RAW_FISHES).requires(Tags.Items.CROPS_CARROT).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_carrot", has(Tags.Items.CROPS_CARROT)).save(consumer, rl("fish_stew"));
+        ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_FINGERS::get).requires(PenguinTags.RAW_FISHES).requires(PenguinTags.BREADS).requires(PenguinItems.PLATE.get()).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_bread", has(PenguinTags.BREADS)).save(consumer, rl("fish_fingers"));
+        ShapelessRecipeBuilder.shapeless(PiscaryItems.SASHIMI::get).requires(PenguinTags.RAW_FISHES).requires(PenguinItems.PLATE.get()).unlockedBy("has_fishes", has(ItemTags.FISHES)).save(consumer, rl("sashimi"));
+        ShapelessRecipeBuilder.shapeless(PiscaryItems.FISH_STEW::get).requires(PenguinTags.RAW_FISHES).requires(Tags.Items.CROPS_CARROT).requires(PenguinItems.DEEP_BOWL.get()).unlockedBy("has_fishes", has(ItemTags.FISHES)).unlockedBy("has_carrot", has(Tags.Items.CROPS_CARROT)).save(consumer, rl("fish_stew"));
         //Rod & Bait
         ShapedRecipeBuilder.shaped(PiscaryItems.FISHING_ROD::get).define('L', ItemTags.LOGS).define('S', Tags.Items.STRING).pattern("  L").pattern(" LS").pattern("L S").unlockedBy("has_string", has(Tags.Items.STRING)).save(consumer, rl("fishing_rod"));
         ShapelessRecipeBuilder.shapeless(PiscaryItems.BAIT::get, 64).requires(Items.BEEF).unlockedBy("has_beef", has(Items.BEEF)).save(consumer, rl("bait"));
