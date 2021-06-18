@@ -16,7 +16,7 @@ public class PiscaryLanguage extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup.piscary.creativetab", "Piscary");
+        add("itemGroup.piscary", "Piscary");
         addItem(PiscaryItems.FISHING_ROD, "Fishing Rod");
         addItem(PiscaryItems.ANCHOVY, "Anchovy");
         addItem(PiscaryItems.ANGELFISH, "Angelfish");

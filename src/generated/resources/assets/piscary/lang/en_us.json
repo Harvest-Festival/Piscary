@@ -140,5 +140,5 @@
   "item.piscary.walleye": "Walleye",
   "item.piscary.walleye_bucket": "Bucket of Walleye",
   "item.piscary.walleye_spawn_egg": "Spawn Walleye",
-  "itemGroup.piscary.creativetab": "Piscary"
+  "itemGroup.piscary": "Piscary"
 }

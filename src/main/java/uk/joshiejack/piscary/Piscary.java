@@ -4,6 +4,8 @@ import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,6 +40,17 @@ public class Piscary {
         @OnlyIn(Dist.CLIENT)
         public ItemStack makeIcon() {
             return new ItemStack(PiscaryItems.PUPFISH.get());
+        }
+
+        @OnlyIn(Dist.CLIENT)
+        public void fillItemList(@Nonnull NonNullList<ItemStack> list) {
+            NonNullList<ItemStack> spawnEggs = NonNullList.create();
+            Registry.ITEM.forEach(item -> {
+                if (item instanceof SpawnEggItem) item.fillItemCategory(this, spawnEggs);
+                else item.fillItemCategory(this, list);
+            });
+
+            list.addAll(spawnEggs);
         }
     };
 
