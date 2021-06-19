@@ -42,8 +42,8 @@ public class PiscaryRecipes extends RecipeProvider {
         //Recycler
         RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.FISH_BONES.get()), Items.BONE_MEAL, 2).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("fish_bones"));
         RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.OLD_BOOT.get()), Items.LEATHER, 1).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("old_boot"));
-        RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.TIN_CAN.get()), Items.IRON_NUGGET, 3).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("tin_can"));
-        RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.FOSSIL.get()), Items.COAL, 1).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("fossil"));
+        RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.EMPTY_CAN.get()), Items.IRON_NUGGET, 3).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("tin_can"));
+        RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.FISH_FOSSIL.get()), Items.COAL, 1).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("fossil"));
         RecyclerRecipe.recycler(Ingredient.of(ItemTags.WOOL), Items.STRING, 3).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("wool"));
     }
 }

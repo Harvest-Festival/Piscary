@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "piscary:item/fish/stargazer"
+    "layer0": "piscary:item/loot/empty_can"
   }
 }

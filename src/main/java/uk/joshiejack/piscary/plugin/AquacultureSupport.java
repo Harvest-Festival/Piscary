@@ -44,7 +44,7 @@ public class AquacultureSupport implements IModPlugin {
             registerFishKGtoPounds(addWeight, fishData, PiscaryItems.PUPFISH, 0.01, 0.05);
             registerFishKGtoPounds(addWeight, fishData, PiscaryItems.SARDINE, 0.1, 1);
             registerFishKGtoPounds(addWeight, fishData, PiscaryItems.SIAMESE_FIGHTING_FISH, 0.02, 0.07);
-            registerFishKGtoPounds(addWeight, fishData, PiscaryItems.STARGAZER, 5, 9);
+            registerFishKGtoPounds(addWeight, fishData, PiscaryItems.WHITEMARGIN_STARGAZER, 5, 9);
             registerFishKGtoPounds(addWeight, fishData, PiscaryItems.STINGRAY, 7.5, 75);
             registerFishKGtoPounds(addWeight, fishData, PiscaryItems.SILVER_STRIPE_BLAASOP, 0.03, 0.3);
             registerFishKGtoPounds(addWeight, fishData, PiscaryItems.TROUT, 3, 18);

@@ -89,7 +89,7 @@ public class PiscaryLootTables extends LootTableProvider {
             this.addFishLootTable(PiscaryEntities.PUPFISH, PiscaryItems.PUPFISH, Items.BONE_MEAL);
             this.addFishLootTable(PiscaryEntities.SARDINE, PiscaryItems.SARDINE, Items.BONE_MEAL);
             this.addFishLootTable(PiscaryEntities.SIAMESE_FIGHTING_FISH, PiscaryItems.SIAMESE_FIGHTING_FISH, Items.BONE_MEAL);
-            this.addFishLootTable(PiscaryEntities.STARGAZER, PiscaryItems.STARGAZER, Items.BONE_MEAL);
+            this.addFishLootTable(PiscaryEntities.WHITEMARGIN_STARGAZER, PiscaryItems.WHITEMARGIN_STARGAZER, Items.BONE_MEAL);
             this.addFishLootTable(PiscaryEntities.STINGRAY, PiscaryItems.STINGRAY, Items.BONE_MEAL);
             this.addFishLootTable(PiscaryEntities.SILVER_STRIPE_BLAASOP, PiscaryItems.SILVER_STRIPE_BLAASOP, Items.BONE_MEAL);
             this.addFishLootTable(PiscaryEntities.TROUT, PiscaryItems.TROUT, Items.BONE_MEAL);
@@ -161,24 +161,24 @@ public class PiscaryLootTables extends LootTableProvider {
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.PUPFISH.get()).setWeight(4).when(Inverted.invert(IN_HOT_BIOME)).when(Inverted.invert(IN_OCEAN_BIOME)))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.SARDINE.get()).setWeight(30).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_HOT_BIOME)))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.SIAMESE_FIGHTING_FISH.get()).setWeight(2).when(Inverted.invert(IN_HOT_BIOME)).when(Inverted.invert(IN_OCEAN_BIOME)))
-                    .add(ItemLootEntry.lootTableItem(PiscaryItems.STARGAZER.get()).setWeight(2).when(IN_HOT_BIOME).when(IN_OCEAN_BIOME))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.STINGRAY.get()).setWeight(1).when(IN_OCEAN_BIOME))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.SILVER_STRIPE_BLAASOP.get()).setWeight(1).when(IN_OCEAN_BIOME).when(IN_SNOWY_BIOME))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.TROUT.get()).setWeight(14).when(Inverted.invert(IN_HOT_BIOME)))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.TUNA.get()).setWeight(2).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_HOT_BIOME)))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.WALLEYE.get()).setWeight(8).when(Inverted.invert(IN_HOT_BIOME)).when(Inverted.invert(IN_COLD_BIOME)))
+                    .add(ItemLootEntry.lootTableItem(PiscaryItems.WHITEMARGIN_STARGAZER.get()).setWeight(2).when(IN_HOT_BIOME).when(IN_OCEAN_BIOME))
             ));
 
             builder.accept(new ResourceLocation(Piscary.MODID, "gameplay/fishing/junk"), LootTable.lootTable().withPool(LootPool.lootPool()
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.FISH_BONES.get()).setWeight(17))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.OLD_BOOT.get()).setWeight(14))
-                    .add(ItemLootEntry.lootTableItem(PiscaryItems.TIN_CAN.get()).setWeight(16))
+                    .add(ItemLootEntry.lootTableItem(PiscaryItems.EMPTY_CAN.get()).setWeight(16))
             ));
 
             builder.accept(new ResourceLocation(Piscary.MODID, "gameplay/fishing/treasure"), LootTable.lootTable().withPool(LootPool.lootPool()
                     .add(ItemLootEntry.lootTableItem(Items.EMERALD).setWeight(5))
-                    .add(ItemLootEntry.lootTableItem(PiscaryItems.FOSSIL.get()).setWeight(10).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_SNOWY_BIOME)))
-                    .add(ItemLootEntry.lootTableItem(PiscaryItems.TREASURE.get()).setWeight(1).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_SNOWY_BIOME)))
+                    .add(ItemLootEntry.lootTableItem(PiscaryItems.FISH_FOSSIL.get()).setWeight(10).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_SNOWY_BIOME)))
+                    .add(ItemLootEntry.lootTableItem(PiscaryItems.PIRATE_TREASURE.get()).setWeight(1).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_SNOWY_BIOME)))
             ));
         }
     }

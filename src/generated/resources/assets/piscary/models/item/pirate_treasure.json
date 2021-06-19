@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "piscary:item/bucket/stargazer"
+    "layer0": "piscary:item/loot/pirate_treasure"
   }
 }

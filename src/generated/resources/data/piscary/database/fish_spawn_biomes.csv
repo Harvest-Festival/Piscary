@@ -44,11 +44,11 @@ piscary:siamese_fighting_fish,exclude,hot
 piscary:siamese_fighting_fish,exclude,ocean
 piscary:silver_stripe_blaasop,require,ocean
 piscary:silver_stripe_blaasop,require,snowy
-piscary:stargazer,require,hot
-piscary:stargazer,require,ocean
 piscary:stingray,require,ocean
 piscary:trout,exclude,hot
 piscary:tuna,exclude,hot
 piscary:tuna,require,ocean
 piscary:walleye,exclude,cold
 piscary:walleye,exclude,hot
+piscary:whitemargin_stargazer,require,hot
+piscary:whitemargin_stargazer,require,ocean

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "piscary:item/loot/fossil"
+    "layer0": "piscary:item/fish/whitemargin_stargazer"
   }
 }

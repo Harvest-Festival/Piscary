@@ -17,7 +17,7 @@
         {
           "type": "minecraft:item",
           "weight": 16,
-          "name": "piscary:tin_can"
+          "name": "piscary:empty_can"
         }
       ]
     }

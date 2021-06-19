@@ -29,7 +29,7 @@ public class PiscaryItemTags extends ItemTagsProvider {
                 , PiscaryItems.KOI.get(), PiscaryItems.LAMPREY.get(), PiscaryItems.LUNGFISH.get(), PiscaryItems.MANTA_RAY.get()
                 , PiscaryItems.MINNOW.get(), PiscaryItems.NEON_TETRA.get(), PiscaryItems.NORTHERN_PIKE.get(), PiscaryItems.PERCH.get()
                 , PiscaryItems.PICKEREL.get(), PiscaryItems.PIRANHA.get(), PiscaryItems.PUPFISH.get()
-                , PiscaryItems.SARDINE.get(), PiscaryItems.SIAMESE_FIGHTING_FISH.get(), PiscaryItems.STARGAZER.get()
+                , PiscaryItems.SARDINE.get(), PiscaryItems.SIAMESE_FIGHTING_FISH.get(), PiscaryItems.WHITEMARGIN_STARGAZER.get()
                 , PiscaryItems.STINGRAY.get(), PiscaryItems.SILVER_STRIPE_BLAASOP.get(), PiscaryItems.TROUT.get(), PiscaryItems.TUNA.get()
                 , PiscaryItems.WALLEYE.get());
         TagsProvider.Builder<Item> rawTag = tag(PenguinTags.RAW_FISHES);

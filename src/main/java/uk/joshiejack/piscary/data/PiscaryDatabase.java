@@ -68,7 +68,7 @@ public class PiscaryDatabase extends AbstractDatabaseProvider {
         addHatcheryEntry(PiscaryEntities.SARDINE, 3);
         addHatcheryEntry(PiscaryEntities.SIAMESE_FIGHTING_FISH, 5);
         addHatcheryEntry(PiscaryEntities.SILVER_STRIPE_BLAASOP, 7);
-        addHatcheryEntry(PiscaryEntities.STARGAZER, 5);
+        addHatcheryEntry(PiscaryEntities.WHITEMARGIN_STARGAZER, 5);
         addHatcheryEntry(PiscaryEntities.STINGRAY, 7);
         addHatcheryEntry(PiscaryEntities.TROUT, 3);
         addHatcheryEntry(PiscaryEntities.TUNA, 5);
@@ -131,7 +131,7 @@ public class PiscaryDatabase extends AbstractDatabaseProvider {
         addFishSpawnSettings(PiscaryEntities.SARDINE, 20, 7, 12);
         addFishSpawnSettings(PiscaryEntities.SIAMESE_FIGHTING_FISH, 2, 1, 1);
         addFishSpawnSettings(PiscaryEntities.SILVER_STRIPE_BLAASOP, 1, 1, 1);
-        addFishSpawnSettings(PiscaryEntities.STARGAZER, 2, 1, 1);
+        addFishSpawnSettings(PiscaryEntities.WHITEMARGIN_STARGAZER, 2, 1, 1);
         addFishSpawnSettings(PiscaryEntities.STINGRAY, 1, 1, 1);
         addFishSpawnSettings(PiscaryEntities.TROUT, 14, 4, 6);
         addFishSpawnSettings(PiscaryEntities.TUNA, 2, 3, 5);
@@ -183,8 +183,8 @@ public class PiscaryDatabase extends AbstractDatabaseProvider {
         addFishSpawns(PiscaryEntities.SIAMESE_FIGHTING_FISH, EXCLUDE, OCEAN);
         addFishSpawns(PiscaryEntities.SILVER_STRIPE_BLAASOP, REQUIRE, OCEAN);
         addFishSpawns(PiscaryEntities.SILVER_STRIPE_BLAASOP, REQUIRE, SNOWY);
-        addFishSpawns(PiscaryEntities.STARGAZER, REQUIRE, OCEAN);
-        addFishSpawns(PiscaryEntities.STARGAZER, REQUIRE, HOT);
+        addFishSpawns(PiscaryEntities.WHITEMARGIN_STARGAZER, REQUIRE, OCEAN);
+        addFishSpawns(PiscaryEntities.WHITEMARGIN_STARGAZER, REQUIRE, HOT);
         addFishSpawns(PiscaryEntities.STINGRAY, REQUIRE, OCEAN);
         addFishSpawns(PiscaryEntities.TROUT, EXCLUDE, HOT);
         addFishSpawns(PiscaryEntities.TUNA, REQUIRE, OCEAN);

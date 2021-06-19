@@ -46,7 +46,7 @@ public class PiscaryClient {
         put(map, new AngelfishModel(), "angelfish", "butterflyfish");
         put(map, new AnglerfishModel(), "anglerfish");
         put(map, new ElectricRayModel(), "electric_ray");
-        put(map, new FatFishModel(), "bass", "carp", "koi", "perch", "piranha", "stargazer", "tuna");
+        put(map, new FatFishModel(), "bass", "carp", "koi", "perch", "piranha", "whitemargin_stargazer", "tuna");
         put(map, new LampreyModel(), "lamprey");
         put(map, new LongFishModel(), "bowfin", "lungfish", "catfish");
         put(map, new MantaRayModel(), "manta_ray");

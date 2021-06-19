@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "piscary:item/loot/treasure"
+    "layer0": "piscary:item/loot/fish_fossil"
   }
 }

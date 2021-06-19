@@ -58,7 +58,7 @@ public class PiscaryEntities {
     public static final RegistryObject<EntityType<?>> PUPFISH = register("pupfish", PupfishEntity::new, 0.5F, 0.3F, 0x87A3CF, 0x7454A0);
     public static final RegistryObject<EntityType<?>> SARDINE = register("sardine", SardineEntity::new, 0.5F, 0.3F, 0xE0DDE1, 0x2C345A);
     public static final RegistryObject<EntityType<?>> SIAMESE_FIGHTING_FISH = register("siamese_fighting_fish", SolitaryFishEntity::new, 0.5F, 0.3F, 0x593E83, 0x266FCB);
-    public static final RegistryObject<EntityType<?>> STARGAZER = register("stargazer", FloordwellingFishEntity::new, 0.7F, 0.5F, 0x72513D, 0x4382A9);
+    public static final RegistryObject<EntityType<?>> WHITEMARGIN_STARGAZER = register("whitemargin_stargazer", FloordwellingFishEntity::new, 0.7F, 0.5F, 0x72513D, 0x4382A9);
     public static final RegistryObject<EntityType<?>> STINGRAY = register("stingray", StingRayEntity::new, 0.7F, 0.4F, 0x779974, 0x1B281F);
     public static final RegistryObject<EntityType<?>> SILVER_STRIPE_BLAASOP = register("silver_stripe_blaasop", SolitaryFishEntity::new, 0.7F, 0.4F, 0x727E6A, 0x2F3D40);
     public static final RegistryObject<EntityType<?>> TROUT = register("trout", TroutEntity::new, 0.7F, 0.4F, 0xC5929D, 0x6D5635);

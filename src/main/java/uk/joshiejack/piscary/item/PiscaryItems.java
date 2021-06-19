@@ -41,19 +41,19 @@ public class PiscaryItems {
     public static final RegistryObject<Item> PUPFISH = ITEMS.register("pupfish", () -> new Item(new Item.Properties().food(PiscaryFoods.SMALL_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> SARDINE = ITEMS.register("sardine", () -> new Item(new Item.Properties().food(PiscaryFoods.SMALL_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> SIAMESE_FIGHTING_FISH = ITEMS.register("siamese_fighting_fish", () -> new Item(new Item.Properties().food(PiscaryFoods.SMALL_FISH).tab(Piscary.TAB)));
-    public static final RegistryObject<Item> STARGAZER = ITEMS.register("stargazer", () -> new Item(new Item.Properties().food(PiscaryFoods.LARGE_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> STINGRAY = ITEMS.register("stingray", () -> new Item(new Item.Properties().food(PiscaryFoods.LARGE_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> SILVER_STRIPE_BLAASOP = ITEMS.register("silver_stripe_blaasop", () -> new Item(new Item.Properties().food(PiscaryFoods.LARGE_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> TROUT = ITEMS.register("trout", () -> new Item(new Item.Properties().food(PiscaryFoods.MEDIUM_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> TUNA = ITEMS.register("tuna", () -> new Item(new Item.Properties().food(PiscaryFoods.LARGE_FISH).tab(Piscary.TAB)));
     public static final RegistryObject<Item> WALLEYE = ITEMS.register("walleye", () -> new Item(new Item.Properties().food(PiscaryFoods.LARGE_FISH).tab(Piscary.TAB)));
+    public static final RegistryObject<Item> WHITEMARGIN_STARGAZER = ITEMS.register("whitemargin_stargazer", () -> new Item(new Item.Properties().food(PiscaryFoods.LARGE_FISH).tab(Piscary.TAB)));
 
     //Loot
     public static final RegistryObject<Item> FISH_BONES = ITEMS.register("fish_bones", () -> new Item(new Item.Properties().tab(Piscary.TAB)));
-    public static final RegistryObject<Item> FOSSIL = ITEMS.register("fossil", () -> new Item(new Item.Properties().tab(Piscary.TAB)));
+    public static final RegistryObject<Item> FISH_FOSSIL = ITEMS.register("fish_fossil", () -> new Item(new Item.Properties().tab(Piscary.TAB)));
     public static final RegistryObject<Item> OLD_BOOT = ITEMS.register("old_boot", () -> new Item(new Item.Properties().tab(Piscary.TAB)));
-    public static final RegistryObject<Item> TIN_CAN = ITEMS.register("tin_can", () -> new Item(new Item.Properties().tab(Piscary.TAB)));
-    public static final RegistryObject<Item> TREASURE = ITEMS.register("treasure", () -> new TreasureItem(new Item.Properties().tab(Piscary.TAB)));
+    public static final RegistryObject<Item> EMPTY_CAN = ITEMS.register("empty_can", () -> new Item(new Item.Properties().tab(Piscary.TAB)));
+    public static final RegistryObject<Item> PIRATE_TREASURE = ITEMS.register("pirate_treasure", () -> new TreasureItem(new Item.Properties().tab(Piscary.TAB)));
     //Meals
     public static final RegistryObject<Item> FISH_FINGERS = ITEMS.register("fish_fingers", () -> new Item(new Item.Properties().food(PiscaryFoods.FISH_FINGERS).tab(Piscary.TAB)));
     public static final RegistryObject<Item> SASHIMI = ITEMS.register("sashimi", () -> new Item(new Item.Properties().food(PiscaryFoods.SASHIMI).tab(Piscary.TAB)));

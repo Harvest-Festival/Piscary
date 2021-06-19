@@ -524,25 +524,6 @@
             {
               "condition": "piscary:biome_type",
               "predicate": {
-                "type": "HOT"
-              }
-            },
-            {
-              "condition": "piscary:biome_type",
-              "predicate": {
-                "type": "OCEAN"
-              }
-            }
-          ],
-          "weight": 2,
-          "name": "piscary:stargazer"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "piscary:biome_type",
-              "predicate": {
                 "type": "OCEAN"
               }
             }
@@ -629,6 +610,25 @@
           ],
           "weight": 8,
           "name": "piscary:walleye"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "piscary:biome_type",
+              "predicate": {
+                "type": "HOT"
+              }
+            },
+            {
+              "condition": "piscary:biome_type",
+              "predicate": {
+                "type": "OCEAN"
+              }
+            }
+          ],
+          "weight": 2,
+          "name": "piscary:whitemargin_stargazer"
         }
       ]
     }
