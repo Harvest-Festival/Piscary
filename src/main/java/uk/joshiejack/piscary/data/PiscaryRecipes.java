@@ -37,7 +37,7 @@ public class PiscaryRecipes extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(PiscaryItems.BAIT::get, 64).requires(Items.BEEF).unlockedBy("has_beef", has(Items.BEEF)).save(consumer, rl("bait"));
         //Machines
         ShapedRecipeBuilder.shaped(PiscaryItems.FISH_TRAP::get).define('W', ItemTags.LOGS).define('S', Tags.Items.STRING).pattern("WSW").pattern("S S").pattern("WSW").unlockedBy("has_string", has(Tags.Items.STRING)).save(consumer, rl("fish_trap"));
-        ShapedRecipeBuilder.shaped(PiscaryItems.HATCHERY::get).define('F', ItemTags.FENCES).define('S', ItemTags.WOODEN_SLABS).pattern("F F").pattern("F F").pattern("SSS").unlockedBy("has_planks", has(ItemTags.PLANKS)).save(consumer, rl("hatchery"));
+        ShapedRecipeBuilder.shaped(PiscaryItems.HATCHERY::get).define('F', ItemTags.WOODEN_FENCES).define('S', ItemTags.WOODEN_SLABS).pattern("F F").pattern("F F").pattern("SSS").unlockedBy("has_planks", has(ItemTags.PLANKS)).save(consumer, rl("hatchery"));
         ShapedRecipeBuilder.shaped(PiscaryItems.RECYCLER::get).define('S', Tags.Items.STONE).define('W', Tags.Items.RODS_WOODEN).define('P', Blocks.PISTON).define('L', Blocks.LEVER).pattern("SWS").pattern("SPS").pattern("SLS").unlockedBy("has_redstone", has(Tags.Items.DUSTS_REDSTONE)).save(consumer, rl("recycler"));
         //Recycler
         RecyclerRecipe.recycler(Ingredient.of(PiscaryItems.FISH_BONES.get()), Items.BONE_MEAL, 2).unlocks("has_recycler", has(PiscaryBlocks.RECYCLER.get())).save(consumer, rl("fish_bones"));
