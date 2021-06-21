@@ -1,4 +1,4 @@
-f791706e1525cd904b7dfc13a80cf853af274328 assets/piscary/lang/en_us.json
+b541bb657a7268139ea1422f2585c3ec17a41f9a assets/piscary/lang/en_us.json
 6935ec52d29c151c558f975a212b576e6dac1f98 assets/piscary/models/item/anchovy.json
 d99d152d3edf6a82acb24d5bd90c589d3c76fc4d assets/piscary/models/item/anchovy_bucket.json
 98167609bf3898587f7565736a6fc24a7966cacd assets/piscary/models/item/anchovy_spawn_egg.json
@@ -119,7 +119,6 @@ e428b7c5dd52d41e9ae490f9796a9071386f6075 data/piscary/advancements/recipes/misc/
 7ee1da36c8977e908cfbcf9cbe4546fcf622a469 data/piscary/advancements/recipes/piscary/fish_fingers.json
 71e5c03d755b0c46b48991add3cf6d0cde4df69c data/piscary/advancements/recipes/piscary/fish_stew.json
 f3b39fd066f40a8e6e5c2abebc7d492a87ed820d data/piscary/advancements/recipes/piscary/fish_trap.json
-6c99684c3c0bcadd716b08842cfed893ecb2add3 data/piscary/advancements/recipes/piscary/fishing_rod.json
 ea8244da775eb6650c96f1b5a83a933c8782b7a7 data/piscary/advancements/recipes/piscary/hatchery.json
 4920bc4cd4176e7d41c67b7cad48ad2ed1a23345 data/piscary/advancements/recipes/piscary/recycler.json
 3a85503ade32b207a0cd528bd6040a23e0de269c data/piscary/advancements/recipes/piscary/sashimi.json
@@ -172,7 +171,6 @@ fc6b2eb015599c600379c6645198a92c84cb01e9 data/piscary/recipes/fish_bones.json
 b771ef67cf5b5e44cc92125ff3e6b7f5f4eb2e22 data/piscary/recipes/fish_fingers.json
 ca53841f9036897d530ff6b476e05e162b15121e data/piscary/recipes/fish_stew.json
 2a7c35c9f56b7566372a5e6d9f423c72bb23de67 data/piscary/recipes/fish_trap.json
-583b94fe6d67530a914eed7b12bef6d984ae1235 data/piscary/recipes/fishing_rod.json
 85df01239f8564fd65fd3b6e0e066097d6b488b5 data/piscary/recipes/fossil.json
 6dc00434cfee60dafe7a60c6257742dd214e2ef8 data/piscary/recipes/hatchery.json
 316e0fadbe45f5413244dc083c40c5191827df48 data/piscary/recipes/old_boot.json

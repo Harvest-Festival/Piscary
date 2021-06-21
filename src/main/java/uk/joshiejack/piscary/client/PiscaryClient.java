@@ -6,9 +6,6 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.SalmonModel;
 import net.minecraft.entity.passive.fish.AbstractFishEntity;
-import net.minecraft.item.ItemModelsProperties;
-import net.minecraft.item.Items;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -22,12 +19,10 @@ import uk.joshiejack.piscary.block.PiscaryBlocks;
 import uk.joshiejack.piscary.client.model.*;
 import uk.joshiejack.piscary.client.renderer.*;
 import uk.joshiejack.piscary.entity.PiscaryEntities;
-import uk.joshiejack.piscary.item.PiscaryItems;
 import uk.joshiejack.piscary.tileentity.PiscaryTileEntities;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Piscary.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -69,8 +64,6 @@ public class PiscaryClient {
             RenderTypeLookup.setRenderLayer(PiscaryBlocks.FISH_TRAP.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(PiscaryBlocks.HATCHERY.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(PiscaryBlocks.RECYCLER.get(), RenderType.cutout());
-            ItemModelsProperties.register(PiscaryItems.FISHING_ROD.get(), new ResourceLocation("cast"),
-                    Objects.requireNonNull(ItemModelsProperties.getProperty(Items.FISHING_ROD, new ResourceLocation("cast"))));
         });
     }
 

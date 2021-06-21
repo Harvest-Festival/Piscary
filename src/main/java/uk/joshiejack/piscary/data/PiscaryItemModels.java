@@ -27,9 +27,7 @@ public class PiscaryItemModels extends ItemModelProvider {
                     String path = Objects.requireNonNull(item.getRegistryName()).getPath();
                     if (item instanceof BlockItem)
                         getBuilder(path).parent(new ModelFile.UncheckedModelFile(modLoc("block/" + path)));
-                    else if (item == PiscaryItems.FISHING_ROD.get()) {
-
-                    } else {
+                    else {
                         if (path.contains("spawn_egg")) {
                             withExistingParent(path, mcLoc("item/template_spawn_egg"));
                         } else {

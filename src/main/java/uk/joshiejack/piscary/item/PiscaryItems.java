@@ -5,7 +5,6 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import uk.joshiejack.penguinlib.item.base.FishingRodPenguinItem;
 import uk.joshiejack.piscary.Piscary;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
 
@@ -58,7 +57,6 @@ public class PiscaryItems {
     public static final RegistryObject<Item> FISH_FINGERS = ITEMS.register("fish_fingers", () -> new Item(new Item.Properties().food(PiscaryFoods.FISH_FINGERS).tab(Piscary.TAB)));
     public static final RegistryObject<Item> SASHIMI = ITEMS.register("sashimi", () -> new Item(new Item.Properties().food(PiscaryFoods.SASHIMI).tab(Piscary.TAB)));
     public static final RegistryObject<Item> FISH_STEW = ITEMS.register("fish_stew", () -> new Item(new Item.Properties().food(PiscaryFoods.FISH_STEW).tab(Piscary.TAB)));
-    public static final RegistryObject<Item> FISHING_ROD = ITEMS.register("fishing_rod", () -> new FishingRodPenguinItem(new Item.Properties().durability(128).tab(Piscary.TAB), 3));
     public static final RegistryObject<Item> FISH_TRAP = ITEMS.register("fish_trap", () -> new FishTrapItem(PiscaryBlocks.FISH_TRAP.get(), new Item.Properties().tab(Piscary.TAB)));
     public static final RegistryObject<Item> HATCHERY = ITEMS.register("hatchery", () -> new HatcheryItem(PiscaryBlocks.HATCHERY.get(), new Item.Properties().tab(Piscary.TAB)));
     public static final RegistryObject<Item> RECYCLER = ITEMS.register("recycler", () -> new BlockItem(PiscaryBlocks.RECYCLER.get(), new Item.Properties().tab(Piscary.TAB)));
