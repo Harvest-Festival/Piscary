@@ -1,5 +1,4 @@
 {
-  "block.minecraft.air": "Spawn Whitemargin Stargazer",
   "block.piscary.fish_trap": "Fish Trap",
   "block.piscary.hatchery": "Hatchery",
   "block.piscary.recycler": "Recycler",
@@ -139,5 +138,6 @@
   "item.piscary.walleye_spawn_egg": "Spawn Walleye",
   "item.piscary.whitemargin_stargazer": "Whitemargin Stargazer",
   "item.piscary.whitemargin_stargazer_bucket": "Bucket of Whitemargin Stargazer",
+  "item.piscary.whitemargin_stargazer_spawn_egg": "Spawn Whitemargin Stargazer",
   "itemGroup.piscary": "Piscary"
 }

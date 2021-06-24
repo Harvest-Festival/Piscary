@@ -140,7 +140,7 @@ public class PiscaryLanguage extends LanguageProvider {
         addItemFromName("sardine_spawn_egg", "Spawn Sardine");
         addItemFromName("siamese_fighting_fish_spawn_egg", "Spawn Siamese Fighting Fish");
         addItemFromName("silver_stripe_blaasop_spawn_egg", "Spawn Silver-Stripe Blaasop");
-        addItemFromName("whitemargin_stargazer_egg", "Spawn Whitemargin Stargazer");
+        addItemFromName("whitemargin_stargazer_spawn_egg", "Spawn Whitemargin Stargazer");
         addItemFromName("stingray_spawn_egg", "Spawn Stingray");
         addItemFromName("trout_spawn_egg", "Spawn Trout");
         addItemFromName("tuna_spawn_egg", "Spawn Tuna");
