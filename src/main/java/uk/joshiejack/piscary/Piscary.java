@@ -75,6 +75,7 @@ public class Piscary {
             generator.addProvider(new PiscaryItemTags(generator, blockTags, event.getExistingFileHelper()));
             generator.addProvider(new PiscaryRecipes(generator));
             generator.addProvider(new PiscaryDatabase(generator));
+            generator.addProvider(new PiscaryBlockStates(generator, event.getExistingFileHelper()));
         }
 
         if (event.includeClient()) {

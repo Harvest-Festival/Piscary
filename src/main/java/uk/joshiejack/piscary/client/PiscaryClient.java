@@ -54,7 +54,7 @@ public class PiscaryClient {
         put(map, new TallFishModel(), "blue_tang", "damselfish");
         PiscaryEntities.ENTITIES.getEntries().forEach(fish -> {
             EntityModel m = map.get(fish.getId().getPath());
-            Piscary.LOGGER.info("Registering: " + fish.getId() + " as " + m);
+            //Piscary.LOGGER.info("Registering: " + fish.getId() + " as " + m);
             RenderingRegistry.registerEntityRenderingHandler(fish.get(),
                     (manager) -> (EntityRenderer) (
                             fish.getId().getPath().contains("ray") ? new RayRenderer(manager, map.get(fish.getId().getPath()), fish.getId().getPath())
