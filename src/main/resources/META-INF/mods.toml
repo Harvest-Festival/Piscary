@@ -1,6 +1,7 @@
 modLoader="javafml"
 loaderVersion="[36,)"
 license="MIT"
+credits="https://freesound.org/people/RutgerMuller/sounds/51044/ Recycler sound"
 [[mods]]
     modId="piscary"
     version="${file.jarVersion}"

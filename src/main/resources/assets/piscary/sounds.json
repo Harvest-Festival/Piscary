@@ -1,0 +1,10 @@
+{
+  "recycler": {
+    "category": "block",
+    "sounds": [
+      "piscary:recycler1",
+      "piscary:recycler2",
+      "piscary:recycler3"
+    ]
+  }
+}

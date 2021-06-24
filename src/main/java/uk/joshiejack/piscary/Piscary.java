@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -14,9 +15,12 @@ import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import uk.joshiejack.piscary.block.PiscaryBlocks;
@@ -56,6 +60,7 @@ public class Piscary {
 
     public Piscary() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        PiscarySounds.SOUNDS.register(eventBus);
         PiscaryBlocks.BLOCKS.register(eventBus);
         PiscaryItems.ITEMS.register(eventBus);
         PiscaryEntities.ENTITIES.register(eventBus);
@@ -87,5 +92,14 @@ public class Piscary {
     @SubscribeEvent
     public static void registerLootData(RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
         Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MODID, "biome_type"), BiomeTypeLocationCheck.BIOME_TYPE);
+    }
+
+    public static class PiscarySounds {
+        public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Piscary.MODID);
+        public static final RegistryObject<SoundEvent> RECYCLER = createSoundEvent("recycler");
+
+        private static RegistryObject<SoundEvent> createSoundEvent(@Nonnull String name) {
+            return SOUNDS.register(name, () -> new SoundEvent(new ResourceLocation(Piscary.MODID, name)));
+        }
     }
 }
