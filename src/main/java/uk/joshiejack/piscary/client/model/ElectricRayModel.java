@@ -9,12 +9,12 @@ public class ElectricRayModel extends RayModel {
     public ElectricRayModel() {
         super(0.75F);
         texWidth = 128;
-        texHeight = 128;
+        texHeight = 64;
 
         tail = new ModelRenderer(this);
         tail.setPos(0.0F, 20.0F, 15.0F);
         tail.texOffs(0, 0).addBox(-1.5F, 3.0F, -1.0F, 3.0F, 1.0F, 8.0F, 0.0F, false);
-        tail.texOffs(0, 9).addBox(-2.5F, 4.0F, 7.0F, 5.0F, 0.0F, 4.0F, 0.0F, false);
+        tail.texOffs(60, 40).addBox(-4.5F, 4.0F, 7.0F, 9.0F, 0.0F, 6.0F, 0.0F, false);
 
         body = new ModelRenderer(this);
         body.setPos(0.0F, 24.0F, 0.0F);
