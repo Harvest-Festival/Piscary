@@ -41,7 +41,7 @@ public class PiscaryClient {
         put(map, new AngelfishModel(), "angelfish", "butterflyfish");
         put(map, new AnglerfishModel(), "anglerfish");
         put(map, new ElectricRayModel(), "electric_ray");
-        put(map, new FatFishModel(), "bass", "carp", "koi", "perch", "piranha", "whitemargin_stargazer", "tuna");
+        put(map, new FatFishModel(), "bass", "carp", "koi", "perch", "piranha", "tuna");
         put(map, new LampreyModel(), "lamprey");
         put(map, new LongFishModel(), "bowfin", "lungfish", "catfish");
         put(map, new MantaRayModel(), "manta_ray");
@@ -50,6 +50,7 @@ public class PiscaryClient {
         put(map, new SalmonModel<>(), "chub", "silver_stripe_blaasop", "trout", "walleye");
         put(map, new SiameseFightingFishModel(), "siamese_fighting_fish");
         put(map, new SmallFishModel(), "anchovy", "goldfish", "minnow", "neon_tetra", "pupfish", "sardine");
+        put(map, new StargazerModel(), "whitemargin_stargazer");
         put(map, new TallFishModel(), "blue_tang", "damselfish");
         PiscaryEntities.ENTITIES.getEntries().forEach(fish -> {
             EntityModel m = map.get(fish.getId().getPath());
