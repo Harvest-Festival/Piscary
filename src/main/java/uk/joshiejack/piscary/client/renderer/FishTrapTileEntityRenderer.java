@@ -21,7 +21,7 @@ public class FishTrapTileEntityRenderer extends AbstractItemTileEntityRenderer<F
     @Override
     public void render(@Nonnull FishTrapTileEntity tile, float partialTicks, @Nonnull MatrixStack matrix, @Nonnull IRenderTypeBuffer buffer, int combinedLightIn, int combinedOverlayIn) {
         ItemStack inSlot = tile.getItem(0);
-        if (!tile.isBaited())
+        if (!inSlot.isEmpty() && !tile.isBaited())
             renderSpeechBubble(inSlot, matrix, buffer, combinedLightIn, combinedOverlayIn);
     }
 }

@@ -6,15 +6,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import uk.joshiejack.penguinlib.PenguinLib;
 import uk.joshiejack.penguinlib.events.DatabaseLoadedEvent;
+import uk.joshiejack.piscary.Piscary;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod.EventBusSubscriber(modid = PenguinLib.MODID)
+@Mod.EventBusSubscriber(modid = Piscary.MODID)
 public class BaitRegistry {
     private static final Map<Item, BaitData> INSTANCE = new HashMap<>();
 
