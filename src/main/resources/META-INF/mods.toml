@@ -23,6 +23,6 @@ credits="https://freesound.org/people/RutgerMuller/sounds/51044/ Recycler sound"
 [[dependencies.piscary]]
     modId="penguinlib"
     mandatory=true
-    versionRange="[0.2,)"
+    versionRange="[0.3.0,)"
     ordering="NONE"
     side="BOTH"
