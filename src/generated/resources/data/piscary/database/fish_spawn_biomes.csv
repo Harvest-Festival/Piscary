@@ -1,4 +1,5 @@
 Entity,Type,Biome Type
+piscary:anchovy,exclude,hot
 piscary:anchovy,require,ocean
 piscary:angelfish,require,jungle
 piscary:anglerfish,require,ocean

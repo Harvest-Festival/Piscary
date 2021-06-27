@@ -135,7 +135,7 @@ public class PiscaryLootTables extends LootTableProvider {
         @Override
         public void accept(@Nonnull BiConsumer<ResourceLocation, LootTable.Builder> builder) {
             builder.accept(new ResourceLocation(Piscary.MODID, "gameplay/fishing/fish"), LootTable.lootTable().withPool(LootPool.lootPool()
-                    .add(ItemLootEntry.lootTableItem(PiscaryItems.ANCHOVY.get()).setWeight(32).when(IN_OCEAN_BIOME))
+                    .add(ItemLootEntry.lootTableItem(PiscaryItems.ANCHOVY.get()).setWeight(32).when(IN_OCEAN_BIOME).when(Inverted.invert(IN_HOT_BIOME)))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.ANGELFISH.get()).setWeight(3).when(IN_JUNGLE_BIOME))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.ANGLERFISH.get()).setWeight(1).when(IN_OCEAN_BIOME).when(IN_SNOWY_BIOME))
                     .add(ItemLootEntry.lootTableItem(PiscaryItems.BASS.get()).setWeight(12).when(Inverted.invert(Alternative.alternative(IN_COLD_BIOME, IN_HOT_BIOME))))

@@ -12,6 +12,15 @@
               "predicate": {
                 "type": "OCEAN"
               }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "piscary:biome_type",
+                "predicate": {
+                  "type": "HOT"
+                }
+              }
             }
           ],
           "weight": 32,
