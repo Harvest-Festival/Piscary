@@ -59,8 +59,8 @@ public class FishTrapTileEntity extends AbstractInventoryTileEntity {
 
     @SuppressWarnings("ConstantConditions")
     private boolean shouldTrapBreak() {
-        long difference = level.getDayTime() - timeCaught; //Always break after two hours, 50% between 30 minutes and 2 hours, 20% otherwise,
-        return difference >= 2000 || (difference < 500 && level.random.nextInt(5) <= 1) || (difference >= 500 && level.random.nextInt(2) == 0);
+        long difference = level.getDayTime() - timeCaught; //Always break after two days, 50% between 1 day and 2 days, 20% otherwise,
+        return difference >= 48000 || (difference < 24000 && level.random.nextInt(5) <= 1) || (difference >= 24000 && level.random.nextInt(2) == 0);
     }
 
     public boolean isBaited() {
