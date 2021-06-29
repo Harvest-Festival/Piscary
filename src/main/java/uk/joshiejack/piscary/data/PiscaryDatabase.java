@@ -192,6 +192,8 @@ public class PiscaryDatabase extends AbstractDatabaseProvider {
         addFishSpawns(PiscaryEntities.TUNA, EXCLUDE, HOT);
         addFishSpawns(PiscaryEntities.WALLEYE, EXCLUDE, HOT);
         addFishSpawns(PiscaryEntities.WALLEYE, EXCLUDE, COLD);
+        addHatcheryRenderEntry(() -> EntityType.PUFFERFISH, -90F);
+        //addHatcheryAdvancedEntry(() -> EntityType.SKELETON, 1, Items.BONE, Items.SKELETON_SPAWN_EGG);
     }
 
     public enum SpawnType {
@@ -214,9 +216,18 @@ public class PiscaryDatabase extends AbstractDatabaseProvider {
         addEntry("bait", "Item,Loot Table,Speed,Luck", CSVUtils.join(itemRegistryName, lootTable, speed, luck));
     }
 
+    protected void addHatcheryRenderEntry(Supplier<EntityType<?>> entity, float rotation) {
+        addEntry("hatchery_renderers", "Entity,Rotation", CSVUtils.join(entity.get().getRegistryName().toString(), rotation));
+    }
+
     protected void addHatcheryEntry(Supplier<EntityType<?>> entity, int cycles) {
         addEntry("hatchery", "Entity,Cycles", CSVUtils.join(entity.get().getRegistryName().toString(), cycles));
     }
+
+    protected void addHatcheryAdvancedEntry(Supplier<EntityType<?>> entity, int cycles, Item waterbucket, Item fishbucket) {
+        addEntry("hatchery_advanced", "Entity,Cycles,Water Bucket,Fish Bucket", CSVUtils.join(entity.get().getRegistryName().toString(), cycles, waterbucket.getRegistryName().toString(), fishbucket.getRegistryName().toString()));
+    }
+
 
     protected void addHatcheryEntry(String entityRegistryName, int days) {
         addEntry("hatchery", "Entity,Cycles", CSVUtils.join(entityRegistryName, days));

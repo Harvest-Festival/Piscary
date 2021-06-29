@@ -9,11 +9,11 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.settings.GraphicsFanciness;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
-import net.minecraft.entity.passive.fish.PufferfishEntity;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import uk.joshiejack.penguinlib.client.renderer.tile.AbstractItemTileEntityRenderer;
+import uk.joshiejack.piscary.client.HatcheryClient;
 import uk.joshiejack.piscary.tileentity.HatcheryTileEntity;
 
 import javax.annotation.Nonnull;
@@ -35,7 +35,7 @@ public class HatcheryTileEntityRenderer extends AbstractItemTileEntityRenderer<H
                 matrix.translate(0.5D, 0.6D, 0.5D);
                 float f = 0.53125F;
                 float f1 = Math.max(entity.getBbWidth(), entity.getBbHeight());
-                float height = renderer.getHeight(i);
+                float height = renderer.getHeight(i) + 0.021F;
                 if ((double) f1 > 1.0D) {
                     height += 1.6F;
                 }
@@ -56,12 +56,10 @@ public class HatcheryTileEntityRenderer extends AbstractItemTileEntityRenderer<H
                 matrix.translate(1.35F, 0F, 1.35F);
                 matrix.mulPose(Vector3f.XP.rotationDegrees(clockwise ? -65F : 65F));
                 entity.setPose(Pose.SWIMMING);
-                if (entity instanceof PufferfishEntity) {
-                    matrix.mulPose(Vector3f.ZP.rotationDegrees(-90F));
+                if (HatcheryClient.rotates(entity.getType())) {
+                    matrix.mulPose(Vector3f.ZP.rotationDegrees(HatcheryClient.getRotation(entity.getType())));
                 }
 
-                if (System.currentTimeMillis() %60 == 0)
-                    entity.tickCount++;
                 runAsFancy(() -> Minecraft.getInstance().getEntityRenderDispatcher().render(entity, 0, 0, 0, 0, 1.0F, matrix, buffer, 15728880));
                 matrix.popPose();
                 matrix.popPose();

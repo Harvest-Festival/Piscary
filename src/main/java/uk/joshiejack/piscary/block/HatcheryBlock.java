@@ -6,7 +6,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.item.FishBucketItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
@@ -20,13 +19,12 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.items.ItemHandlerHelper;
 import uk.joshiejack.penguinlib.block.base.AbstractPenguinBlock;
+import uk.joshiejack.piscary.crafting.PiscaryRegistries;
 import uk.joshiejack.piscary.tileentity.HatcheryTileEntity;
 
 import javax.annotation.Nonnull;
-import java.util.function.Supplier;
 
 public class HatcheryBlock extends AbstractPenguinBlock {
     private static final VoxelShape SHAPE = Block.box(0D, 0D, 0D, 16D, 16D, 16D);
@@ -59,27 +57,27 @@ public class HatcheryBlock extends AbstractPenguinBlock {
             }
 
             return ActionResultType.sidedSuccess(world.isClientSide);
-        } else if (held.getItem() == Items.WATER_BUCKET) {
+        } else if (PiscaryRegistries.canContainFish(held, hatchery.getEntityType())) {
             if (!hatchery.isEmpty() && !world.isClientSide) {
                 if (!player.abilities.instabuild) {
                     held.shrink(1); //Reduce ot y
                 }
 
-                ItemHandlerHelper.giveItemToPlayer(player, hatchery.getFishBucket());
+                ItemHandlerHelper.giveItemToPlayer(player, PiscaryRegistries.getFishBucket(world, hatchery.getEntityType()));
                 hatchery.removeFish(); //Remove the fish from the hatchery
                 player.playSound(SoundEvents.BUCKET_FILL_FISH, 1.0F, 1.0F);
             }
 
             return ActionResultType.sidedSuccess(world.isClientSide);
-        } else if (held.getItem() instanceof FishBucketItem) {
+        } else if (PiscaryRegistries.containsFish(held)) {
             if (hatchery.isEmpty() && !world.isClientSide) {
-                Supplier<EntityType<?>> type = ObfuscationReflectionHelper.getPrivateValue(FishBucketItem.class, (FishBucketItem) held.getItem(), "fishTypeSupplier");
+                EntityType<?> type = PiscaryRegistries.getFishFromItem(held);
                 if (!player.abilities.instabuild) {
                     held.shrink(1); //Reduce ot y
                 }
 
-                hatchery.setEntityTypeAndCount(type.get(), 1); //Set the hatchery to the correct fish bucket entity type
-                ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Items.WATER_BUCKET));
+                hatchery.setEntityTypeAndCount(type, 1); //Set the hatchery to the correct fish bucket entity type
+                ItemHandlerHelper.giveItemToPlayer(player, PiscaryRegistries.getWaterBucket(world, type));
                 player.playSound(SoundEvents.BUCKET_FILL_FISH, 1.0F, 1.0F);
             }
 

@@ -41,7 +41,8 @@ public class HatcheryFishRender {
         }
 
 
-        displayEntity.tickCount++;
+        if (System.currentTimeMillis() %10 == 0)
+            displayEntity.tickCount++;
     }
 
     @Nullable

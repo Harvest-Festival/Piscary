@@ -27,6 +27,7 @@ import java.util.Map;
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Piscary.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PiscaryClient {
+
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         ClientRegistry.bindTileEntityRenderer(PiscaryTileEntities.FISH_TRAP.get(), (FishTrapTileEntityRenderer::new));

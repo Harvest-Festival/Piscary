@@ -18,7 +18,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import uk.joshiejack.penguinlib.data.TimeUnitRegistry;
 import uk.joshiejack.penguinlib.network.PenguinNetwork;
@@ -30,12 +29,9 @@ import uk.joshiejack.piscary.network.SyncHatcheryPacket;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 @SuppressWarnings("ConstantConditions")
 public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITickableTileEntity {
-    private static Method getBucketItemStack = null;
     private EntityType<?> entityType = null;
     private int count = 0;
     private int ticksPassed = 0;
@@ -43,16 +39,6 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
 
     public HatcheryTileEntity() {
         super(PiscaryTileEntities.HATCHERY.get());
-    }
-
-    public ItemStack getFishBucket() {
-        try {
-            if (getBucketItemStack == null)
-                getBucketItemStack = ObfuscationReflectionHelper.findMethod(AbstractFishEntity.class, "func_203707_dx");
-            return entityType == null ? ItemStack.EMPTY : (ItemStack) getBucketItemStack.invoke(entityType.create(level));
-        } catch (InvocationTargetException | IllegalAccessException ignored) {
-            return ItemStack.EMPTY;
-        }
     }
 
     public boolean isEmpty() {
@@ -75,7 +61,7 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
         if (level.isClientSide)
             renderer.updateFish();
         if (level.getGameTime() % 100 == 0 && count < 10) {
-            int ticksRequired = (int) (PiscaryRegistries.getValue(getEntityType()) * TimeUnitRegistry.get(getType().getRegistryName().toString()));
+            int ticksRequired = (int) (PiscaryRegistries.getCycles(getEntityType()) * TimeUnitRegistry.get(getType().getRegistryName().toString()));
             if (ticksRequired >= 1) {
                 ticksPassed += 100;
                 if (ticksPassed >= ticksRequired) {
