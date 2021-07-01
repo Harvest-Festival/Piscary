@@ -52,14 +52,14 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
         if (!level.isClientSide)
             PenguinNetwork.sendToNearby(new SyncHatcheryPacket(worldPosition, entityType, count), this);
         else
-            renderer.reloadFish(entityType, count, level.random);
+            getRenderer().reloadFish(entityType, count, level.random);
     }
 
     @Override
     public void tick() {
         if (getEntityType() == null) return;
         if (level.isClientSide)
-            renderer.updateFish();
+            getRenderer().updateFish();
         if (level.getGameTime() % 100 == 0 && count < 10) {
             int ticksRequired = (int) (PiscaryRegistries.getCycles(getEntityType()) * TimeUnitRegistry.get(getType().getRegistryName().toString()));
             if (ticksRequired >= 1) {
@@ -111,20 +111,20 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
     }
 
     @OnlyIn(Dist.CLIENT)
-    private final HatcheryFishRender renderer = new HatcheryFishRender(this);
+    private HatcheryFishRender renderer;
 
     @OnlyIn(Dist.CLIENT)
     public HatcheryFishRender getRenderer() {
+        if (renderer == null)
+            renderer = new HatcheryFishRender(this);
         return renderer;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Nullable
     public EntityType<?> getEntityType() {
         return entityType;
     }
 
-    @OnlyIn(Dist.CLIENT)
     public int getCount() {
         return count;
     }
@@ -132,7 +132,8 @@ public class HatcheryTileEntity extends AbstractPenguinTileEntity implements ITi
     @Override
     public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket packet) {
         super.onDataPacket(net, packet);
-        renderer.reloadFish(entityType, count, level.random);
+        if (level.isClientSide)
+            getRenderer().reloadFish(entityType, count, level.random);
     }
 
     @Override
