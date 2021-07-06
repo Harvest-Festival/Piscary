@@ -3,6 +3,7 @@ package uk.joshiejack.piscary.crafting;
 import joptsimple.internal.Strings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -23,7 +24,7 @@ public class BaitRegistry {
         INSTANCE.clear();
         event.table("bait").rows().forEach(row -> {
             Item item = row.item();
-            if (item != null)
+            if (item != Items.AIR)
                 INSTANCE.put(item, new BaitData(row.get("loot table"), row.getColor("speed"), row.getAsInt("luck")));
         });
     }

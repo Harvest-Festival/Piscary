@@ -36,10 +36,11 @@ public class BaitHandler {
     @SubscribeEvent
     public static void removeBaitFromFishingRod(PlayerInteractEvent.RightClickItem event) {
         PlayerEntity player = event.getPlayer();
-        if (!player.isShiftKeyDown()) return;
-        removeBait(player, getHand(player), 64);
-        event.setCancellationResult(ActionResultType.SUCCESS);
-        event.setCanceled(true);
+        if (!player.isShiftKeyDown() || !(event.getItemStack().getItem() instanceof FishingRodItem)) return;
+        if (removeBait(player, getHand(player), 64)) {
+            event.setCancellationResult(ActionResultType.SUCCESS);
+            event.setCanceled(true);
+        }
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -74,8 +75,8 @@ public class BaitHandler {
     }
 
     @SuppressWarnings("ConstantConditions")
-    private static void removeBait(PlayerEntity player, @Nullable Hand hand, int amount) {
-        if (hand == null) return;
+    private static boolean removeBait(PlayerEntity player, @Nullable Hand hand, int amount) {
+        if (hand == null) return false;
         ItemStack rod = player.getItemInHand(hand);
         CompoundNBT tag = rod.hasTag() ? rod.getTag() : new CompoundNBT();
         int existing = tag.getInt("Bait");
@@ -94,6 +95,7 @@ public class BaitHandler {
         player.setItemInHand(hand, rod);
         if (!player.level.isClientSide)
             PenguinNetwork.sendToClient(new SetHeldItemPacket(hand, rod), (ServerPlayerEntity) player);
+        return existing > 0;
     }
 
     @SuppressWarnings("ConstantConditions")
